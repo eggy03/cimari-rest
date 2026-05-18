@@ -1,4 +1,4 @@
-package io.github.eggy03.cimari.rest.controller;
+package io.github.eggy03.cimari.rest.controller.processor;
 
 import io.github.eggy03.cimari.rest.service.processor.Win32ProcessorService;
 import jakarta.ws.rs.GET;

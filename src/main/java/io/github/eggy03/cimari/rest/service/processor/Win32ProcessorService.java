@@ -5,7 +5,7 @@
  */
 package io.github.eggy03.cimari.rest.service.processor;
 
-import io.github.eggy03.cimari.rest.entity.Win32Processor;
+import io.github.eggy03.cimari.rest.entity.processor.Win32Processor;
 import io.github.eggy03.cimari.rest.mapping.processor.Win32ProcessorMapper;
 import io.github.eggy03.cimari.rest.service.CommonServiceInterface;
 import io.github.eggy03.cimari.rest.shell.query.Cimv2;
@@ -19,17 +19,10 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Service class for fetching CPU information from the system.
  * <p>
  * This class executes the {@link Cimv2#WIN32_PROCESSOR} PowerShell command
  * and maps the resulting output into {@link Win32Processor} objects.
  * </p>
- *
- * <h2>Usage examples</h2>
- * <pre>{@code
- * Win32ProcessorServiceservice = new Win32ProcessorService();
- * List<Win32Processor> processors = service.get(10);
- * }</pre>
  *
  * @since 0.1.0
  */

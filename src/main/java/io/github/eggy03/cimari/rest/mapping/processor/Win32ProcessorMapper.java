@@ -6,7 +6,7 @@
 package io.github.eggy03.cimari.rest.mapping.processor;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.github.eggy03.cimari.rest.entity.Win32Processor;
+import io.github.eggy03.cimari.rest.entity.processor.Win32Processor;
 import io.github.eggy03.cimari.rest.mapping.CommonMappingInterface;
 import jakarta.enterprise.context.ApplicationScoped;
 import lombok.NonNull;
@@ -25,7 +25,7 @@ public class Win32ProcessorMapper implements CommonMappingInterface<Win32Process
     private final @NonNull ObjectMapper mapper;
 
     @Override
-    public @NonNull ObjectMapper configureObjectMapper() {
+    public @NonNull ObjectMapper getObjectMapper() {
         return mapper;
     }
 }
