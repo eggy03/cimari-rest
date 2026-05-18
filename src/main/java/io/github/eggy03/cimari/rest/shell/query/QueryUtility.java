@@ -3,11 +3,11 @@
  * SPDX-FileCopyrightText: 2026 The ferrumx-windows contributors
  * SPDX-FileCopyrightText: 2026 Cimari contributors
  */
-package io.github.eggy03.shell.query;
+package io.github.eggy03.cimari.rest.shell.query;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.github.eggy03.annotation.WmiClass;
-import io.github.eggy03.exception.AnnotationNotFoundException;
+import io.github.eggy03.cimari.rest.annotation.WmiClass;
+import io.github.eggy03.cimari.rest.exception.AnnotationNotFoundException;
 import lombok.NonNull;
 
 import java.util.Arrays;

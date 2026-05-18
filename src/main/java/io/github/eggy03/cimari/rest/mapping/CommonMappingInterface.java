@@ -3,14 +3,14 @@
  * SPDX-FileCopyrightText: 2025 The ferrumx-windows contributors
  * SPDX-FileCopyrightText: 2026 Cimari contributors
  */
-package io.github.eggy03.mapping;
+package io.github.eggy03.cimari.rest.mapping;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.TypeFactory;
-import io.github.eggy03.exception.MappingException;
+import io.github.eggy03.cimari.rest.exception.MappingException;
 import lombok.NonNull;
 
 import java.util.Collections;

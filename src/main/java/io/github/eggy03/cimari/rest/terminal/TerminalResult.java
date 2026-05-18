@@ -1,4 +1,4 @@
-package io.github.eggy03.terminal;
+package io.github.eggy03.cimari.rest.terminal;
 
 import lombok.NonNull;
 

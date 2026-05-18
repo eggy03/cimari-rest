@@ -3,9 +3,9 @@
  * SPDX-FileCopyrightText: 2025 The ferrumx-windows contributors
  * SPDX-FileCopyrightText: 2026 Cimari contributors
  */
-package io.github.eggy03.exception;
+package io.github.eggy03.cimari.rest.exception;
 
-import io.github.eggy03.terminal.TerminalService;
+import io.github.eggy03.cimari.rest.terminal.TerminalService;
 import lombok.experimental.StandardException;
 
 /**

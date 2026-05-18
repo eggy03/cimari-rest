@@ -3,10 +3,10 @@
  * SPDX-FileCopyrightText: 2025 The ferrumx-windows contributors
  * SPDX-FileCopyrightText: 2026 Cimari contributors
  */
-package io.github.eggy03.terminal;
+package io.github.eggy03.cimari.rest.terminal;
 
-import io.github.eggy03.exception.TerminalIOException;
-import io.github.eggy03.shell.query.Cimv2;
+import io.github.eggy03.cimari.rest.exception.TerminalIOException;
+import io.github.eggy03.cimari.rest.shell.query.Cimv2;
 import jakarta.enterprise.context.ApplicationScoped;
 import lombok.NonNull;
 import org.apache.commons.exec.CommandLine;

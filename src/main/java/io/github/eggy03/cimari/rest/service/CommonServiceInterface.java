@@ -3,27 +3,26 @@
  * SPDX-FileCopyrightText: 2025 The ferrumx-windows contributors
  * SPDX-FileCopyrightText: 2026 Cimari contributors
  */
-package io.github.eggy03.service;
+package io.github.eggy03.cimari.rest.service;
 
-import io.github.eggy03.mapping.CommonMappingInterface;
-import io.github.eggy03.terminal.TerminalService;
+import io.github.eggy03.cimari.rest.mapping.CommonMappingInterface;
+import io.github.eggy03.cimari.rest.terminal.TerminalService;
 
-import java.util.Optional;
+import java.util.List;
 
 /**
  * Common service interface whose method implementations provide a way to fetch WMI data from PowerShell
- * in the form of {@link Optional}
+ * in the form of a {@link List}
  * <p>
- * Useful for implementing services of classes which return exactly one instance
- * such as the {@code Win32_ComputerSystem} WMI class
+ * Useful for implementing services of classes which return more than one instance
+ * such as the {@code Win32_NetworkAdapter} WMI class
  * </p>
  *
  * @param <S> the entity type returned by the service implementation
- * @see CommonServiceInterface
+ * @see OptionalCommonServiceInterface
  * @since 0.1.0
  */
-
-public interface OptionalCommonServiceInterface<S> {
+public interface CommonServiceInterface<S> {
 
     /**
      * Implementations of this method are expected to rely on
@@ -32,8 +31,8 @@ public interface OptionalCommonServiceInterface<S> {
      * or the default methods of {@link CommonMappingInterface}
      *
      * @param timeout the maximum time (in seconds) to wait for the PowerShell command to complete before terminating the process
-     * @return an {@link Optional} entity of type {@code <S>} defined by the caller
+     * @return a {@link List} of entities of type {@code <S>} defined by the caller
      * @since 0.1.0
      */
-    Optional<S> get(long timeout);
+    List<S> get(long timeout);
 }

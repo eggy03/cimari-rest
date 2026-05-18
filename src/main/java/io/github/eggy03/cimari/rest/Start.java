@@ -1,4 +1,4 @@
-package io.github.eggy03;
+package io.github.eggy03.cimari.rest;
 
 import io.quarkus.runtime.Quarkus;
 import io.quarkus.runtime.annotations.QuarkusMain;

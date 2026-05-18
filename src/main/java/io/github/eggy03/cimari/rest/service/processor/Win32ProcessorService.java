@@ -3,14 +3,14 @@
  * SPDX-FileCopyrightText: 2025 The ferrumx-windows contributors
  * SPDX-FileCopyrightText: 2026 Cimari contributors
  */
-package io.github.eggy03.service.processor;
+package io.github.eggy03.cimari.rest.service.processor;
 
-import io.github.eggy03.entity.Win32Processor;
-import io.github.eggy03.mapping.processor.Win32ProcessorMapper;
-import io.github.eggy03.service.CommonServiceInterface;
-import io.github.eggy03.shell.query.Cimv2;
-import io.github.eggy03.terminal.TerminalResult;
-import io.github.eggy03.terminal.TerminalService;
+import io.github.eggy03.cimari.rest.entity.Win32Processor;
+import io.github.eggy03.cimari.rest.mapping.processor.Win32ProcessorMapper;
+import io.github.eggy03.cimari.rest.service.CommonServiceInterface;
+import io.github.eggy03.cimari.rest.shell.query.Cimv2;
+import io.github.eggy03.cimari.rest.terminal.TerminalResult;
+import io.github.eggy03.cimari.rest.terminal.TerminalService;
 import jakarta.enterprise.context.ApplicationScoped;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;

@@ -3,10 +3,10 @@
  * SPDX-FileCopyrightText: 2025 The ferrumx-windows contributors
  * SPDX-FileCopyrightText: 2026 Cimari contributors
  */
-package io.github.eggy03.entity;
+package io.github.eggy03.cimari.rest.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.github.eggy03.annotation.WmiClass;
+import io.github.eggy03.cimari.rest.annotation.WmiClass;
 import io.quarkus.runtime.annotations.RegisterForReflection;
 import lombok.Data;
 import lombok.NoArgsConstructor;

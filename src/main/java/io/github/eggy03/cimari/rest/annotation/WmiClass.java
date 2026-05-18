@@ -3,7 +3,7 @@
  * SPDX-FileCopyrightText: 2026 The ferrumx-windows contributors
  * SPDX-FileCopyrightText: 2026 Cimari contributors
  */
-package io.github.eggy03.annotation;
+package io.github.eggy03.cimari.rest.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

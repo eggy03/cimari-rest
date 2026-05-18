@@ -3,9 +3,9 @@
  * SPDX-FileCopyrightText: 2026 The ferrumx-windows contributors
  * SPDX-FileCopyrightText: 2026 Cimari contributors
  */
-package io.github.eggy03.shell.query;
+package io.github.eggy03.cimari.rest.shell.query;
 
-import io.github.eggy03.entity.Win32Processor;
+import io.github.eggy03.cimari.rest.entity.Win32Processor;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;

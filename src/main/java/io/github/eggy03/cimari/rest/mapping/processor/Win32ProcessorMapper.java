@@ -3,11 +3,11 @@
  * SPDX-FileCopyrightText: 2025 The ferrumx-windows contributors
  * SPDX-FileCopyrightText: 2026 Cimari contributors
  */
-package io.github.eggy03.mapping.processor;
+package io.github.eggy03.cimari.rest.mapping.processor;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.github.eggy03.entity.Win32Processor;
-import io.github.eggy03.mapping.CommonMappingInterface;
+import io.github.eggy03.cimari.rest.entity.Win32Processor;
+import io.github.eggy03.cimari.rest.mapping.CommonMappingInterface;
 import jakarta.enterprise.context.ApplicationScoped;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;

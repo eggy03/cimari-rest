@@ -1,6 +1,6 @@
-package io.github.eggy03.controller;
+package io.github.eggy03.cimari.rest.controller;
 
-import io.github.eggy03.service.processor.Win32ProcessorService;
+import io.github.eggy03.cimari.rest.service.processor.Win32ProcessorService;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
