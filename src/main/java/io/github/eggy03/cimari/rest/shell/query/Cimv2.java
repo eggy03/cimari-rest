@@ -5,6 +5,7 @@
  */
 package io.github.eggy03.cimari.rest.shell.query;
 
+import io.github.eggy03.cimari.rest.entity.memory.Win32PhysicalMemory;
 import io.github.eggy03.cimari.rest.entity.processor.Win32CacheMemory;
 import io.github.eggy03.cimari.rest.entity.processor.Win32Processor;
 import lombok.Getter;
@@ -24,19 +25,11 @@ import lombok.RequiredArgsConstructor;
 @Getter
 public enum Cimv2 {
 
-    /**
-     * Query to fetch the properties of {@code Win32_Processor} class
-     *
-     * @since 0.1.0
-     */
     WIN32_PROCESSOR(generateQuery(Win32Processor.class)),
 
-    /**
-     * Query to fetch the properties of {@code Win32_CacheMemory} class
-     *
-     * @since 0.1.0
-     */
-    WIN32_CACHE_MEMORY(generateQuery(Win32CacheMemory.class));
+    WIN32_CACHE_MEMORY(generateQuery(Win32CacheMemory.class)),
+
+    WIN32_PHYSICAL_MEMORY(generateQuery(Win32PhysicalMemory.class));
 
     private final @NonNull String query;
 
