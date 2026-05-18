@@ -31,7 +31,7 @@ import java.util.Optional;
 public interface CommonMappingInterface<S> {
 
     /**
-     * Configure the {@link ObjectMapper} to be used for JSON processing.
+     * Configure and return the {@link ObjectMapper} to be used for JSON processing.
      *
      * <p>
      * The default implementation returns a new {@link ObjectMapper} instance with default configuration.
@@ -45,7 +45,7 @@ public interface CommonMappingInterface<S> {
      * @return the {@link ObjectMapper} to use
      * @since 0.1.0
      */
-    default @NonNull ObjectMapper configureObjectMapper() {
+    default @NonNull ObjectMapper getObjectMapper() {
         return new ObjectMapper();
     }
 
@@ -74,7 +74,7 @@ public interface CommonMappingInterface<S> {
 
         try {
 
-            ObjectMapper mapper = configureObjectMapper();
+            ObjectMapper mapper = getObjectMapper();
             JsonNode inputJsonNode = mapper.readTree(trimmedInputJson);
 
             if (inputJsonNode.isArray()) {
@@ -115,7 +115,7 @@ public interface CommonMappingInterface<S> {
             return Optional.empty();
 
         try {
-            ObjectMapper mapper = configureObjectMapper();
+            ObjectMapper mapper = getObjectMapper();
             JsonNode inputJsonNode = mapper.readTree(trimmedInputJson);
 
             if (inputJsonNode.isObject()) {
