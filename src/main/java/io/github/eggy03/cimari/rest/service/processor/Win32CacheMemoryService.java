@@ -21,7 +21,7 @@ public class Win32CacheMemoryService implements CommonServiceInterface<Win32Cach
 
     @Override
     public List<Win32CacheMemory> get(long timeout) {
-        TerminalResult terminalResult = terminalService.executeQuery(Cimv2.WIN32_CACHE_MEMORY, timeout);
+        final TerminalResult terminalResult = terminalService.executeQuery(Cimv2.WIN32_CACHE_MEMORY, timeout);
         return mapper.mapToList(terminalResult.result(), Win32CacheMemory.class);
     }
 }

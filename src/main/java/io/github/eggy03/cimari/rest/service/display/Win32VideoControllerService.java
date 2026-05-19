@@ -48,7 +48,7 @@ public class Win32VideoControllerService implements CommonServiceInterface<Win32
      */
     @Override
     public @NonNull List<Win32VideoController> get(long timeout) {
-        TerminalResult terminalResult = terminalService.executeQuery(Cimv2.WIN32_VIDEO_CONTROLLER, timeout);
+        final TerminalResult terminalResult = terminalService.executeQuery(Cimv2.WIN32_VIDEO_CONTROLLER, timeout);
         return mapper.mapToList(terminalResult.result(), Win32VideoController.class);
     }
 }

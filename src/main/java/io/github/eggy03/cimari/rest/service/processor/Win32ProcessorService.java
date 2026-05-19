@@ -48,7 +48,7 @@ public class Win32ProcessorService implements CommonServiceInterface<Win32Proces
      */
     @Override
     public @NonNull List<Win32Processor> get(long timeout) {
-        TerminalResult result = terminalService.executeQuery(Cimv2.WIN32_PROCESSOR, timeout);
+        final TerminalResult result = terminalService.executeQuery(Cimv2.WIN32_PROCESSOR, timeout);
         return mapper.mapToList(result.result(), Win32Processor.class);
     }
 }

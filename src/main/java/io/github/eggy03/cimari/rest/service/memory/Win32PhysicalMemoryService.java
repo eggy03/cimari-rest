@@ -46,7 +46,7 @@ public class Win32PhysicalMemoryService implements CommonServiceInterface<Win32P
      */
     @Override
     public @NonNull List<Win32PhysicalMemory> get(long timeout) {
-        TerminalResult terminalResult = terminalService.executeQuery(Cimv2.WIN32_PHYSICAL_MEMORY, timeout);
+        final TerminalResult terminalResult = terminalService.executeQuery(Cimv2.WIN32_PHYSICAL_MEMORY, timeout);
         return mapper.mapToList(terminalResult.result(), Win32PhysicalMemory.class);
     }
 

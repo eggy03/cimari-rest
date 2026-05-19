@@ -48,7 +48,7 @@ public class Win32DesktopMonitorService implements CommonServiceInterface<Win32D
      */
     @Override
     public @NonNull List<Win32DesktopMonitor> get(long timeout) {
-        TerminalResult terminalResult = terminalService.executeQuery(Cimv2.WIN32_DESKTOP_MONITOR, timeout);
+        final TerminalResult terminalResult = terminalService.executeQuery(Cimv2.WIN32_DESKTOP_MONITOR, timeout);
         return mapper.mapToList(terminalResult.result(), Win32DesktopMonitor.class);
     }
 }
