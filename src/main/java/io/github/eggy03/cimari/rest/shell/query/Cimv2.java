@@ -5,6 +5,8 @@
  */
 package io.github.eggy03.cimari.rest.shell.query;
 
+import io.github.eggy03.cimari.rest.entity.display.Win32DesktopMonitor;
+import io.github.eggy03.cimari.rest.entity.display.Win32VideoController;
 import io.github.eggy03.cimari.rest.entity.memory.Win32PhysicalMemory;
 import io.github.eggy03.cimari.rest.entity.processor.Win32CacheMemory;
 import io.github.eggy03.cimari.rest.entity.processor.Win32Processor;
@@ -29,7 +31,11 @@ public enum Cimv2 {
 
     WIN32_CACHE_MEMORY(generateQuery(Win32CacheMemory.class)),
 
-    WIN32_PHYSICAL_MEMORY(generateQuery(Win32PhysicalMemory.class));
+    WIN32_PHYSICAL_MEMORY(generateQuery(Win32PhysicalMemory.class)),
+
+    WIN32_DESKTOP_MONITOR(generateQuery(Win32DesktopMonitor.class)),
+
+    WIN32_VIDEO_CONTROLLER(generateQuery(Win32VideoController.class));
 
     private final @NonNull String query;
 
