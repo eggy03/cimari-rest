@@ -11,6 +11,7 @@ import io.github.eggy03.cimari.rest.service.CommonServiceInterface;
 import io.github.eggy03.cimari.rest.shell.query.Cimv2;
 import io.github.eggy03.cimari.rest.terminal.TerminalResult;
 import io.github.eggy03.cimari.rest.terminal.TerminalService;
+import io.quarkus.cache.CacheResult;
 import jakarta.enterprise.context.ApplicationScoped;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -47,6 +48,7 @@ public class Win32ProcessorService implements CommonServiceInterface<Win32Proces
      * @since 0.1.0
      */
     @Override
+    @CacheResult(cacheName = "Win32Processor")
     public @NonNull List<Win32Processor> get(long timeout) {
         final TerminalResult result = terminalService.executeQuery(Cimv2.WIN32_PROCESSOR, timeout);
         return mapper.mapToList(result.result(), Win32Processor.class);

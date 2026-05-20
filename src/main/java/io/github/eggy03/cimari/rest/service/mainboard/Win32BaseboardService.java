@@ -11,6 +11,7 @@ import io.github.eggy03.cimari.rest.service.CommonServiceInterface;
 import io.github.eggy03.cimari.rest.shell.query.Cimv2;
 import io.github.eggy03.cimari.rest.terminal.TerminalResult;
 import io.github.eggy03.cimari.rest.terminal.TerminalService;
+import io.quarkus.cache.CacheResult;
 import jakarta.enterprise.context.ApplicationScoped;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -46,6 +47,7 @@ public class Win32BaseboardService implements CommonServiceInterface<Win32Basebo
      * @since 0.1.0
      */
     @Override
+    @CacheResult(cacheName = "Win32Baseboard")
     public @NonNull List<Win32Baseboard> get(long timeout) {
         TerminalResult terminalResult = terminalService.executeQuery(Cimv2.WIN32_BASEBOARD, timeout);
         return mapper.mapToList(terminalResult.result(), Win32Baseboard.class);

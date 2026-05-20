@@ -11,6 +11,7 @@ import io.github.eggy03.cimari.rest.service.CommonServiceInterface;
 import io.github.eggy03.cimari.rest.shell.query.Cimv2;
 import io.github.eggy03.cimari.rest.terminal.TerminalResult;
 import io.github.eggy03.cimari.rest.terminal.TerminalService;
+import io.quarkus.cache.CacheResult;
 import jakarta.enterprise.context.ApplicationScoped;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -47,6 +48,7 @@ public class Win32VideoControllerService implements CommonServiceInterface<Win32
      * @since 0.1.0
      */
     @Override
+    @CacheResult(cacheName = "Win32VideoController")
     public @NonNull List<Win32VideoController> get(long timeout) {
         final TerminalResult terminalResult = terminalService.executeQuery(Cimv2.WIN32_VIDEO_CONTROLLER, timeout);
         return mapper.mapToList(terminalResult.result(), Win32VideoController.class);
