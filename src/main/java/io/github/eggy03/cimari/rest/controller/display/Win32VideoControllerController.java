@@ -8,7 +8,7 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import lombok.RequiredArgsConstructor;
 
-@Path("api/v1/display")
+@Path("api/v1/videocontroller")
 @Produces(MediaType.APPLICATION_JSON)
 @RequiredArgsConstructor
 public class Win32VideoControllerController {
@@ -16,7 +16,6 @@ public class Win32VideoControllerController {
     private final Win32VideoControllerService service;
 
     @GET
-    @Path("/videocontroller")
     public Response geWin32VideoController() {
         return Response
                 .ok(service.get(15))
