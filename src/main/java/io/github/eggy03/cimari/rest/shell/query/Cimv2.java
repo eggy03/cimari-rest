@@ -7,6 +7,9 @@ package io.github.eggy03.cimari.rest.shell.query;
 
 import io.github.eggy03.cimari.rest.entity.display.Win32DesktopMonitor;
 import io.github.eggy03.cimari.rest.entity.display.Win32VideoController;
+import io.github.eggy03.cimari.rest.entity.mainboard.Win32Baseboard;
+import io.github.eggy03.cimari.rest.entity.mainboard.Win32Bios;
+import io.github.eggy03.cimari.rest.entity.mainboard.Win32PortConnector;
 import io.github.eggy03.cimari.rest.entity.memory.Win32PhysicalMemory;
 import io.github.eggy03.cimari.rest.entity.processor.Win32CacheMemory;
 import io.github.eggy03.cimari.rest.entity.processor.Win32Processor;
@@ -28,14 +31,16 @@ import lombok.RequiredArgsConstructor;
 public enum Cimv2 {
 
     WIN32_PROCESSOR(generateQuery(Win32Processor.class)),
-
     WIN32_CACHE_MEMORY(generateQuery(Win32CacheMemory.class)),
 
     WIN32_PHYSICAL_MEMORY(generateQuery(Win32PhysicalMemory.class)),
 
     WIN32_DESKTOP_MONITOR(generateQuery(Win32DesktopMonitor.class)),
+    WIN32_VIDEO_CONTROLLER(generateQuery(Win32VideoController.class)),
 
-    WIN32_VIDEO_CONTROLLER(generateQuery(Win32VideoController.class));
+    WIN32_BASEBOARD(generateQuery(Win32Baseboard.class)),
+    WIN32_PORT_CONNECTOR(generateQuery(Win32PortConnector.class)),
+    WIN32_BIOS(generateQuery(Win32Bios.class));
 
     private final @NonNull String query;
 
