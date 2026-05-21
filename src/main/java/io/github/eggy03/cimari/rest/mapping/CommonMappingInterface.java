@@ -26,7 +26,7 @@ import java.util.Optional;
  * </p>
  *
  * @param <S> the entity type returned by the service implementation
- * @since 0.1.0
+ * @since 0.0.1
  */
 public interface CommonMappingInterface<S> {
 
@@ -43,7 +43,7 @@ public interface CommonMappingInterface<S> {
      * </p>
      *
      * @return the {@link ObjectMapper} to use
-     * @since 0.1.0
+     * @since 0.0.1
      */
     default @NonNull ObjectMapper getObjectMapper() {
         return new ObjectMapper();
@@ -62,9 +62,9 @@ public interface CommonMappingInterface<S> {
      * @param inputJson   the JSON string to parse
      * @param objectClass the class of the objects in the list
      * @return an immutable, non-null list of objects deserialized from JSON.
-     * @throws NullPointerException     if {@code inputJson} or {@code objectClass} is null
-     * @throws MappingException         if {@code inputJson} is parsing fails or deserialization to {@code objectClass} fails
-     * @since 0.1.0
+     * @throws NullPointerException if {@code inputJson} or {@code objectClass} is null
+     * @throws MappingException     if {@code inputJson} is parsing fails or deserialization to {@code objectClass} fails
+     * @since 0.0.1
      */
     default @NonNull List<S> mapToList(@NonNull String inputJson, @NonNull Class<S> objectClass) {
 
@@ -104,11 +104,11 @@ public interface CommonMappingInterface<S> {
      * @param inputJson   the JSON string to parse
      * @param objectClass the class of the object to which {@code inputJson} will be deserialized to
      * @return an {@link Optional} of type {@code <S>}
-     * @throws NullPointerException     if {@code inputJson} or {@code objectClass} is null
-     * @throws MappingException         if {@code inputJson} is parsing fails or deserialization to {@code objectClass} fails
-     * @since 0.1.0
+     * @throws NullPointerException if {@code inputJson} or {@code objectClass} is null
+     * @throws MappingException     if {@code inputJson} is parsing fails or deserialization to {@code objectClass} fails
+     * @since 0.0.1
      */
-    default @NonNull Optional<S> mapToObject(@NonNull String inputJson, @NonNull Class<S> objectClass){
+    default @NonNull Optional<S> mapToObject(@NonNull String inputJson, @NonNull Class<S> objectClass) {
 
         String trimmedInputJson = inputJson.trim();
         if (trimmedInputJson.isEmpty())

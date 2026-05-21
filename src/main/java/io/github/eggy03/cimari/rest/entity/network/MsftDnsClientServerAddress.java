@@ -25,7 +25,7 @@ public record MsftDnsClientServerAddress(
         @Schema(
                 description = """
                         Gets the user-friendly index of the server interface.
-
+                        
                         It's the unique interface index number used by the network stack.
                         """,
                 nullable = true,
@@ -45,7 +45,7 @@ public record MsftDnsClientServerAddress(
         @Schema(
                 description = """
                         Gets the address family of the server address.
-
+                        
                         Possible values:
                         - 2  - IPv4
                         - 23 - IPv6
@@ -63,4 +63,5 @@ public record MsftDnsClientServerAddress(
         )
         List<String> dnsServerAddresses
 
-) {}
+) {
+}

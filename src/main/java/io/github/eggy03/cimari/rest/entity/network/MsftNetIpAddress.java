@@ -39,7 +39,7 @@ public record MsftNetIpAddress(
         @Schema(
                 description = """
                         Address family of the IP address.
-
+                        
                         Possible values:
                         - IPv4 (2)
                         - IPv6 (23)
@@ -77,7 +77,7 @@ public record MsftNetIpAddress(
         @Schema(
                 description = """
                         Type of IP address.
-
+                        
                         Possible values:
                         - Unicast (1)
                         - Anycast (2)
@@ -91,7 +91,7 @@ public record MsftNetIpAddress(
         @Schema(
                 description = """
                         Source of the prefix for this IP address.
-
+                        
                         Possible values:
                         - Other (0)
                         - Manual (1)
@@ -108,7 +108,7 @@ public record MsftNetIpAddress(
         @Schema(
                 description = """
                         Source of the suffix for this IP address.
-
+                        
                         Possible values:
                         - Other (0)
                         - Manual (1)
@@ -184,6 +184,7 @@ public record MsftNetIpAddress(
             )
             Long seconds
 
-    ) {}
+    ) {
+    }
 
 }

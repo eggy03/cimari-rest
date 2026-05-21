@@ -55,19 +55,19 @@ public record Win32SoundDevice(
         @Schema(
                 description = """
                         Current operational status of the sound device.
-
+                        
                         Possible OPERATIONAL values:
                         - OK
                         - Degraded
                         - Pred Fail
-
+                        
                         Possible NON-OPERATIONAL values:
                         - Unknown
                         - Error
                         - Starting
                         - Stopping
                         - Service
-
+                        
                         Possible OTHER values:
                         - Stressed
                         - NonRecover
@@ -83,7 +83,7 @@ public record Win32SoundDevice(
         @Schema(
                 description = """
                         Numeric state of the logical device.
-
+                        
                         Possible values:
                         - 1 - Other
                         - 2 - Unknown
@@ -96,4 +96,5 @@ public record Win32SoundDevice(
         )
         Integer statusInfo
 
-) {}
+) {
+}

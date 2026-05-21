@@ -27,7 +27,7 @@ import java.time.Duration;
  * <b>Mostly for internal use </b>
  * </p>
  *
- * @since 0.1.0
+ * @since 0.0.1
  */
 @ApplicationScoped
 @Slf4j
@@ -63,9 +63,10 @@ public class TerminalService {
      * @param timeout Time in seconds after which the session will be force stopped, must not be null.
      * @return The result of the command executed, wrapped in {@link TerminalResult}
      * @throws IllegalArgumentException if timeout is in negative.
-     * @since 0.1.0
+     * @since 0.0.1
      */
-    @NonNull TerminalResult execute(@NonNull String command, long timeout) {
+    @NonNull
+    TerminalResult execute(@NonNull String command, long timeout) {
 
         if (timeout < 0)
             throw new IllegalArgumentException("Timeout cannot be negative");

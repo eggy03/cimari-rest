@@ -57,7 +57,7 @@ public record Win32DiskPartition(
         @Schema(
                 description = """
                         Total number of consecutive blocks that form this partition.
-
+                        
                         The total size of the partition can be calculated by
                         multiplying this value by blockSize.
                         """,
@@ -113,7 +113,7 @@ public record Win32DiskPartition(
         @Schema(
                 description = """
                         Type of the partition.
-
+                        
                         Possible Values (Non-exhaustive, will be updated when new values are found):
                         - Unused
                         - 12-bit FAT
@@ -137,4 +137,5 @@ public record Win32DiskPartition(
         )
         String type
 
-) {}
+) {
+}

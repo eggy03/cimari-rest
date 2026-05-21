@@ -57,7 +57,7 @@ public record Win32PhysicalMemory(
                 description = """
                         Additional data, beyond asset tag information, that can be used to identify
                         a physical element.
-
+                        
                         For example, bar code data associated with an element that also has an asset tag.
                         """,
                 nullable = true,
@@ -80,7 +80,7 @@ public record Win32PhysicalMemory(
         @Schema(
                 description = """
                         Implementation form factor for the chip.
-
+                        
                         Possible values:
                         - 0 - Unknown
                         - 1 - Other
@@ -133,7 +133,7 @@ public record Win32PhysicalMemory(
         @Schema(
                 description = """
                         Data width of the physical memory in bits.
-
+                        
                         A data width of 0 (zero) and a total width of 8 (eight)
                         indicates that the memory is used solely to provide error correction bits.
                         """,
@@ -177,4 +177,5 @@ public record Win32PhysicalMemory(
         )
         String serialNumber
 
-) {}
+) {
+}

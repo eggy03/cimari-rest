@@ -20,7 +20,7 @@ import lombok.RequiredArgsConstructor;
  * and returns the result in JSON format.
  * </p>
  *
- * @since 0.1.0
+ * @since 0.0.1
  */
 @RequiredArgsConstructor
 @Getter

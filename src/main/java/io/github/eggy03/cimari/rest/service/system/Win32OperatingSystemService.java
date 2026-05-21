@@ -24,13 +24,7 @@ import java.util.List;
  * and maps the resulting output into an unmodifiable {@link List} of {@link Win32OperatingSystem} objects.
  * </p>
  *
- * <h2>Usage examples</h2>
- * <pre>{@code
- * Win32OperatingSystemService service = new Win32OperatingSystemService();
- * List<Win32OperatingSystem> operatingSystems = service.get(10);
- * }</pre>
- *
- * @since 0.1.0
+ * @since 0.0.1
  */
 @ApplicationScoped
 @RequiredArgsConstructor
@@ -50,7 +44,7 @@ public class Win32OperatingSystemService implements CommonServiceInterface<Win32
      *                command to complete before terminating the process
      * @return an unmodifiable {@link List} of {@link Win32OperatingSystem} objects representing the system's operating systems.
      * Returns a {@link Collections#emptyList()} if none are detected.
-     * @since 0.1.0
+     * @since 0.0.1
      */
     @Override
     public @NonNull List<Win32OperatingSystem> get(long timeout) {

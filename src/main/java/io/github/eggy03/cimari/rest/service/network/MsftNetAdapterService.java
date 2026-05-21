@@ -24,13 +24,7 @@ import java.util.List;
  * and maps the resulting output into an unmodifiable {@link List} of {@link MsftNetAdapter} objects.
  * </p>
  *
- * <h2>Usage examples</h2>
- * <pre>{@code
- * MsftNetAdapterService service = new MsftNetAdapterService();
- * List<MsftNetAdapter> adapters = service.get(10);
- * }</pre>
- *
- * @since 0.1.0
+ * @since 0.0.1
  */
 @ApplicationScoped
 @RequiredArgsConstructor
@@ -50,7 +44,7 @@ public class MsftNetAdapterService implements CommonServiceInterface<MsftNetAdap
      *                command to complete before terminating the process
      * @return an unmodifiable {@link List} of {@link MsftNetAdapter} objects representing the system's network adapters.
      * Returns a {@link Collections#emptyList()} if no adapters are detected.
-     * @since 0.1.0
+     * @since 0.0.1
      */
     @Override
     public @NonNull List<MsftNetAdapter> get(long timeout) {

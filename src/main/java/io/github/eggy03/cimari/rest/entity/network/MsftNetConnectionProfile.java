@@ -39,7 +39,7 @@ public record MsftNetConnectionProfile(
         @Schema(
                 description = """
                         Network category of the connected profile.
-
+                        
                         Possible values:
                         - Public (0)
                         - Private (1)
@@ -54,7 +54,7 @@ public record MsftNetConnectionProfile(
         @Schema(
                 description = """
                         Indicates the domain authentication kind associated with the profile.
-
+                        
                         WARNING: No official Microsoft documentation was found for this field.
                         """,
                 nullable = true,
@@ -66,7 +66,7 @@ public record MsftNetConnectionProfile(
         @Schema(
                 description = """
                         IPv4 connectivity status of the connected profile.
-
+                        
                         Possible values:
                         - Disconnected (0)
                         - NoTraffic (1)
@@ -83,7 +83,7 @@ public record MsftNetConnectionProfile(
         @Schema(
                 description = """
                         IPv6 connectivity status of the connected profile.
-
+                        
                         Possible values:
                         - Disconnected (0)
                         - NoTraffic (1)
@@ -96,4 +96,5 @@ public record MsftNetConnectionProfile(
         )
         Long ipv6Connectivity
 
-) {}
+) {
+}

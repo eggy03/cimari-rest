@@ -57,19 +57,19 @@ public record Win32Battery(
         @Schema(
                 description = """
                         Current operational status of the battery device.
-
+                        
                         Possible OPERATIONAL values:
                         - OK
                         - Degraded
                         - Pred Fail
-
+                        
                         Possible NON-OPERATIONAL values:
                         - Unknown
                         - Error
                         - Starting
                         - Stopping
                         - Service
-
+                        
                         Possible OTHER values:
                         - Stressed
                         - NonRecover
@@ -85,7 +85,7 @@ public record Win32Battery(
         @Schema(
                 description = """
                         Array of specific power-related capabilities supported by the battery.
-
+                        
                         Possible values:
                         - 0 - Unknown
                         - 1 - Not Supported
@@ -113,7 +113,7 @@ public record Win32Battery(
         @Schema(
                 description = """
                         Status of the battery.
-
+                        
                         Possible values:
                         - 1 - Discharging
                         - 2 - AC present, not charging
@@ -136,7 +136,7 @@ public record Win32Battery(
         @Schema(
                 description = """
                         Type of battery chemistry.
-
+                        
                         Possible values:
                         - 1 - Other
                         - 2 - Unknown

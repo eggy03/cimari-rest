@@ -10,7 +10,7 @@ import lombok.experimental.StandardException;
 /**
  * Indicates that a given annotation is not found during runtime.
  *
- * @since 0.1.0
+ * @since 0.0.1
  */
 @StandardException
 public class AnnotationNotFoundException extends RuntimeException {

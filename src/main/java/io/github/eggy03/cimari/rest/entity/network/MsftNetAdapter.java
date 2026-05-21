@@ -63,7 +63,7 @@ public record MsftNetAdapter(
         @Schema(
                 description = """
                         Interface description, also known as ifDesc or display name.
-
+                        
                         This is a unique name assigned to the network adapter during installation.
                         """,
                 nullable = true,
@@ -83,7 +83,7 @@ public record MsftNetAdapter(
         @Schema(
                 description = """
                         Current operational status of the network adapter interface.
-
+                        
                         Possible values:
                         - Up (1)
                         - Down (2)
@@ -126,19 +126,19 @@ public record MsftNetAdapter(
         @Schema(
                 description = """
                         Current operational status of the network adapter device.
-
+                        
                         Possible OPERATIONAL values:
                         - OK
                         - Degraded
                         - Pred Fail
-
+                        
                         Possible NON-OPERATIONAL values:
                         - Unknown
                         - Error
                         - Starting
                         - Stopping
                         - Service
-
+                        
                         Possible OTHER values:
                         - Stressed
                         - NonRecover
@@ -218,7 +218,7 @@ public record MsftNetAdapter(
         @Schema(
                 description = """
                         Current media connection state of the adapter.
-
+                        
                         Possible values:
                         - Unknown (0)
                         - Connected (1)
@@ -233,9 +233,9 @@ public record MsftNetAdapter(
         @Schema(
                 description = """
                         Network adapter media type.
-
+                        
                         Numeric equivalent of mediaType.
-
+                        
                         Possible values:
                         - 802.3 (0)
                         - 802.5 (1)
@@ -267,9 +267,9 @@ public record MsftNetAdapter(
         @Schema(
                 description = """
                         Physical media type supported by the network adapter.
-
+                        
                         Numeric equivalent of physicalMediaType.
-
+                        
                         Possible values:
                         - Unspecified (0)
                         - Wireless LAN (1)
@@ -313,4 +313,5 @@ public record MsftNetAdapter(
         )
         String physicalMediaType
 
-) {}
+) {
+}

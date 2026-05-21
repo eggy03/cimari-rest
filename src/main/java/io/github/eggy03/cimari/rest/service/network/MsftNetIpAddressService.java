@@ -24,13 +24,7 @@ import java.util.List;
  * and maps the resulting output into an unmodifiable {@link List} of {@link MsftNetIpAddress} objects.
  * </p>
  *
- * <h2>Usage examples</h2>
- * <pre>{@code
- * MsftNetIpAddressService service = new MsftNetIpAddressService();
- * List<MsftNetIpAddress> address = service.get(10);
- * }</pre>
- *
- * @since 0.1.0
+ * @since 0.0.1
  */
 @ApplicationScoped
 @RequiredArgsConstructor
@@ -50,7 +44,7 @@ public class MsftNetIpAddressService implements CommonServiceInterface<MsftNetIp
      *                command to complete before terminating the process
      * @return an unmodifiable {@link List} of {@link MsftNetIpAddress} objects representing the IPv4 and IPv6 configs.
      * Returns a {@link Collections#emptyList()} if no configs are detected.
-     * @since 0.1.0
+     * @since 0.0.1
      */
     @Override
     public @NonNull List<MsftNetIpAddress> get(long timeout) {

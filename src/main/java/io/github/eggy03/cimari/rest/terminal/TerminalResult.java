@@ -9,7 +9,7 @@ import lombok.NonNull;
  * produced during execution.
  * </p>
  *
- * @since 0.1.0
+ * @since 0.0.1
  */
 public record TerminalResult(@NonNull String result, @NonNull String error) {
 

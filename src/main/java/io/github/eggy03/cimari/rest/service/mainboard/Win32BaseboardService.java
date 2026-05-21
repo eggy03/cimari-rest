@@ -24,7 +24,8 @@ import java.util.List;
  * This class executes the {@link Cimv2#WIN32_BASEBOARD} PowerShell command
  * and maps the resulting output into a {@link Win32Baseboard} with default configuration.
  * </p>
- * @since 0.1.0
+ *
+ * @since 0.0.1
  */
 @ApplicationScoped
 @RequiredArgsConstructor
@@ -44,7 +45,7 @@ public class Win32BaseboardService implements CommonServiceInterface<Win32Basebo
      *                command to complete before terminating the process
      * @return an unmodifiable {@link List} of {@link Win32Baseboard} objects representing the system motherboards.
      * Returns a {@link Collections#emptyList()} if no motherboard entries are detected.
-     * @since 0.1.0
+     * @since 0.0.1
      */
     @Override
     @CacheResult(cacheName = "Win32Baseboard")

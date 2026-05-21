@@ -34,7 +34,7 @@ public record Win32PortConnector(
         @Schema(
                 description = """
                         External reference designator of the port.
-
+                        
                         External reference designators are identifiers that determine
                         the type and use of the port.
                         """,
@@ -47,7 +47,7 @@ public record Win32PortConnector(
         @Schema(
                 description = """
                         Internal reference designator of the port.
-
+                        
                         Internal reference designators are specific to the manufacturer,
                         and identify the circuit board location or use of the port.
                         """,
@@ -60,7 +60,7 @@ public record Win32PortConnector(
         @Schema(
                 description = """
                         Function of the port.
-
+                        
                         Possible values include:
                         - None (0)
                         - Parallel Port XT/AT Compatible (1)
@@ -106,7 +106,7 @@ public record Win32PortConnector(
         @Schema(
                 description = """
                         Array of physical attributes of the connector used by this port.
-
+                        
                         Refer to the Microsoft documentation provided at the class level
                         for a list of possible values.
                         """,
@@ -115,4 +115,5 @@ public record Win32PortConnector(
         )
         List<Integer> connectorType
 
-) {}
+) {
+}

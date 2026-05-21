@@ -43,7 +43,7 @@ public class Win32PhysicalMemoryService implements CommonServiceInterface<Win32P
      *                command to complete before terminating the process
      * @return an unmodifiable {@link List} of {@link Win32PhysicalMemory} objects representing the system's RAM.
      * Returns a {@link Collections#emptyList()} if no memory modules are detected.
-     * @since 0.1.0
+     * @since 0.0.1
      */
     @Override
     @CacheResult(cacheName = "Win32PhysicalMemory")

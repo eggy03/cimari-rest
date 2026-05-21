@@ -86,19 +86,19 @@ public record Win32DiskDrive(
         @Schema(
                 description = """
                         Current operational status of the physical disk.
-
+                        
                         Possible OPERATIONAL values:
                         - OK
                         - Degraded
                         - Pred Fail
-
+                        
                         Possible NON-OPERATIONAL values:
                         - Unknown
                         - Error
                         - Starting
                         - Stopping
                         - Service
-
+                        
                         Possible OTHER values:
                         - Stressed
                         - NonRecover
@@ -130,7 +130,7 @@ public record Win32DiskDrive(
         @Schema(
                 description = """
                         Array of capabilities of the media access device.
-
+                        
                         Possible Values:
                         - 1 - Other
                         - 2 - Sequential Access
@@ -155,7 +155,7 @@ public record Win32DiskDrive(
                 description = """
                         List of more detailed explanations for any of the access device
                         features indicated in the capabilities array.
-
+                        
                         Each entry of this array is related to the entry in the
                         capabilities array located at the same index.
                         """,
@@ -164,4 +164,5 @@ public record Win32DiskDrive(
         )
         List<String> capabilityDescriptions
 
-) {}
+) {
+}

@@ -24,13 +24,7 @@ import java.util.List;
  * and maps the resulting output into an unmodifiable {@link List} of {@link Win32PnPEntity} objects.
  * </p>
  *
- * <h2>Usage examples</h2>
- * <pre>{@code
- * Win32PnPEntityService service = new Win32PnPEntityService();
- * List<Win32PnPEntity> pnpEntityList = service.get(10);
- * }</pre>
- *
- * @since 0.1.0
+ * @since 0.0.1
  */
 @ApplicationScoped
 @RequiredArgsConstructor
@@ -51,7 +45,7 @@ public class Win32PnPEntityService implements CommonServiceInterface<Win32PnPEnt
      *                command to complete before terminating the process
      * @return an unmodifiable {@link List} of {@link Win32PnPEntity} objects representing the system's pnp entities.
      * Returns a {@link Collections#emptyList()} if none are detected.
-     * @since 0.1.0
+     * @since 0.0.1
      */
     @Override
     public @NonNull List<Win32PnPEntity> get(long timeout) {

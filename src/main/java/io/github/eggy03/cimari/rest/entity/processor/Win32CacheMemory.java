@@ -42,7 +42,7 @@ public record Win32CacheMemory(
         @Schema(
                 description = """
                         Type of cache.
-
+                        
                         Possible values:
                         - 1 – Other
                         - 2 – Unknown
@@ -59,7 +59,7 @@ public record Win32CacheMemory(
         @Schema(
                 description = """
                         Cache hierarchy level.
-
+                        
                         Possible values:
                         - 1 – Other
                         - 2 – Unknown
@@ -87,7 +87,7 @@ public record Win32CacheMemory(
         @Schema(
                 description = """
                         Cache associativity.
-
+                        
                         Possible values:
                         - 1 – Other
                         - 2 – Unknown
@@ -107,7 +107,7 @@ public record Win32CacheMemory(
         @Schema(
                 description = """
                         Physical cache location relative to the processor.
-
+                        
                         Possible values:
                         - 0 – Internal
                         - 1 – External
@@ -123,7 +123,7 @@ public record Win32CacheMemory(
         @Schema(
                 description = """
                         Error-correction method used by the cache.
-
+                        
                         Possible values:
                         - 0 – Reserved
                         - 1 – Other
@@ -142,7 +142,7 @@ public record Win32CacheMemory(
         @Schema(
                 description = """
                         Current availability and operational state.
-
+                        
                         Possible values:
                         - 1 – Other
                         - 2 – Unknown
@@ -175,19 +175,19 @@ public record Win32CacheMemory(
         @Schema(
                 description = """
                         Current operational status of the cache device.
-
+                        
                         Possible OPERATIONAL values:
                         - OK
                         - Degraded
                         - Pred Fail
-
+                        
                         Possible NON-OPERATIONAL values:
                         - Unknown
                         - Error
                         - Starting
                         - Stopping
                         - Service
-
+                        
                         Possible OTHER values:
                         - Stressed
                         - NonRecover
@@ -203,7 +203,7 @@ public record Win32CacheMemory(
         @Schema(
                 description = """
                         Logical state of the device.
-
+                        
                         Possible values:
                         - 1 – Other
                         - 2 – Unknown
@@ -216,4 +216,5 @@ public record Win32CacheMemory(
         )
         Integer statusInfo
 
-) {}
+) {
+}

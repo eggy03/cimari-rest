@@ -16,7 +16,7 @@ import lombok.RequiredArgsConstructor;
  * Provides a type-safe implementation of {@link CommonMappingInterface}
  * and maps the received JSON strings to objects or lists of {@link Win32OperatingSystem}
  *
- * @since 0.1.0
+ * @since 0.0.1
  */
 @ApplicationScoped
 @RequiredArgsConstructor

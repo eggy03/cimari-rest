@@ -24,13 +24,7 @@ import java.util.List;
  * and maps the resulting output into an unmodifiable {@link List} of {@link Win32DiskPartition} objects.
  * </p>
  *
- * <h2>Usage examples</h2>
- * <pre>{@code
- * Win32DiskPartitionService service = new Win32DiskPartitionService();
- * List<Win32DiskPartition> partitions = service.get(10);
- * }</pre>
- *
- * @since 0.1.0
+ * @since 0.0.1
  */
 @ApplicationScoped
 @RequiredArgsConstructor
@@ -49,7 +43,7 @@ public class Win32DiskPartitionService implements CommonServiceInterface<Win32Di
      *                command to complete before terminating the process
      * @return an unmodifiable {@link List} of {@link Win32DiskPartition} objects representing the disk partitions.
      * Returns a {@link Collections#emptyList()} if no partitions are detected.
-     * @since 0.1.0
+     * @since 0.0.1
      */
     @Override
     public @NonNull List<Win32DiskPartition> get(long timeout) {

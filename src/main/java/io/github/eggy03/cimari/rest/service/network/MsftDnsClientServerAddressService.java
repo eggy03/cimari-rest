@@ -24,13 +24,7 @@ import java.util.List;
  * and maps the resulting output into an unmodifiable {@link List} of {@link MsftDnsClientServerAddress} objects.
  * </p>
  *
- * <h2>Usage examples</h2>
- * <pre>{@code
- * MsftDnsClientServerAddressService service = new MsftDnsClientServerAddressService();
- * List<MsftDnsClientServerAddress> dns = service.get(10);
- * }</pre>
- *
- * @since 0.1.0
+ * @since 0.0.1
  */
 @ApplicationScoped
 @RequiredArgsConstructor
@@ -50,7 +44,7 @@ public class MsftDnsClientServerAddressService implements CommonServiceInterface
      *                command to complete before terminating the process
      * @return an unmodifiable {@link List} of {@link MsftDnsClientServerAddress} objects representing the DNS configs.
      * Returns a {@link Collections#emptyList()} if no configs are detected.
-     * @since 0.1.0
+     * @since 0.0.1
      */
     @Override
     public @NonNull List<MsftDnsClientServerAddress> get(long timeout) {

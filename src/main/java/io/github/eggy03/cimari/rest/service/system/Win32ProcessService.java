@@ -24,13 +24,7 @@ import java.util.List;
  * and maps the resulting output into an unmodifiable {@link List} of {@link Win32Process} objects.
  * </p>
  *
- * <h2>Usage examples</h2>
- * <pre>{@code
- * Win32ProcessService service = new Win32ProcessService();
- * List<Win32Process> processList = service.get(10);
- * }</pre>
- *
- * @since 0.1.0
+ * @since 0.0.1
  */
 @ApplicationScoped
 @RequiredArgsConstructor
@@ -51,7 +45,7 @@ public class Win32ProcessService implements CommonServiceInterface<Win32Process>
      *                command to complete before terminating the process
      * @return an unmodifiable {@link List} of {@link Win32Process} objects representing the system's processes.
      * Returns a {@link Collections#emptyList()} if none are detected.
-     * @since 0.1.0
+     * @since 0.0.1
      */
     @Override
     public @NonNull List<Win32Process> get(long timeout) {

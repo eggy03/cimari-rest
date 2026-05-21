@@ -106,26 +106,26 @@ public record Win32PnPEntity(
 
         @JsonProperty("Status")
         @Schema(description = """
-                        Current operational status of the Plug and Play device.
-                        
-                        Possible OPERATIONAL values:
-                        - "OK"
-                        - "Degraded"
-                        - "Pred Fail"
-                        
-                        Possible NON-OPERATIONAL values:
-                        - "Unknown"
-                        - "Error"
-                        - "Starting"
-                        - "Stopping"
-                        - "Service"
-                        
-                        Possible OTHER values:
-                        - "Stressed"
-                        - "NonRecover"
-                        - "No Contact"
-                        - "Lost Comm"
-                        """,
+                Current operational status of the Plug and Play device.
+                
+                Possible OPERATIONAL values:
+                - "OK"
+                - "Degraded"
+                - "Pred Fail"
+                
+                Possible NON-OPERATIONAL values:
+                - "Unknown"
+                - "Error"
+                - "Starting"
+                - "Stopping"
+                - "Service"
+                
+                Possible OTHER values:
+                - "Stressed"
+                - "NonRecover"
+                - "No Contact"
+                - "Lost Comm"
+                """,
                 nullable = true,
                 type = SchemaType.STRING
         )

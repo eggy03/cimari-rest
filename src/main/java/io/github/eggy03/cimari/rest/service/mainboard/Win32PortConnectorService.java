@@ -25,7 +25,7 @@ import java.util.List;
  * and maps the resulting output into an unmodifiable {@link List} of {@link Win32PortConnector} objects.
  * </p>
  *
- * @since 0.1.0
+ * @since 0.0.1
  */
 @ApplicationScoped
 @RequiredArgsConstructor
@@ -45,7 +45,7 @@ public class Win32PortConnectorService implements CommonServiceInterface<Win32Po
      *                command to complete before terminating the process
      * @return an unmodifiable {@link List} of {@link Win32PortConnector} objects representing the system's mainboard ports.
      * Returns a {@link Collections#emptyList()} if no ports are detected.
-     * @since 0.1.0
+     * @since 0.0.1
      */
     @Override
     @CacheResult(cacheName = "Win32PortConnector")

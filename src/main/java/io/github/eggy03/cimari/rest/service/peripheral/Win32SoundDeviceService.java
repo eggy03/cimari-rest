@@ -24,13 +24,7 @@ import java.util.List;
  * and maps the resulting output into an unmodifiable {@link List} of {@link Win32SoundDevice} objects.
  * </p>
  *
- * <h2>Usage examples</h2>
- * <pre>{@code
- * Win32SoundDeviceService service = new Win32SoundDeviceService();
- * List<Win32SoundDevice> devices = service.get(10);
- * }</pre>
- *
- * @since 0.1.0
+ * @since 0.0.1
  */
 @ApplicationScoped
 @RequiredArgsConstructor
@@ -50,7 +44,7 @@ public class Win32SoundDeviceService implements CommonServiceInterface<Win32Soun
      *                command to complete before terminating the process
      * @return an unmodifiable {@link List} of {@link Win32SoundDevice} objects representing the system's sound devices.
      * If no sound devices are present, returns a {@link Collections#emptyList()}.
-     * @since 0.1.0
+     * @since 0.0.1
      */
     @Override
     public @NonNull List<Win32SoundDevice> get(long timeout) {

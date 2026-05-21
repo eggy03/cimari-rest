@@ -24,13 +24,7 @@ import java.util.List;
  * and maps the resulting output into an unmodifiable {@link List} of {@link Win32DiskDrive} objects.
  * </p>
  *
- * <h2>Usage examples</h2>
- * <pre>{@code
- * Win32DiskDriveService service = new Win32DiskDriveService();
- * List<Win32DiskDrive> drives = service.get(10);
- * }</pre>
- *
- * @since 0.1.0
+ * @since 0.0.1
  */
 @ApplicationScoped
 @RequiredArgsConstructor
@@ -50,7 +44,7 @@ public class Win32DiskDriveService implements CommonServiceInterface<Win32DiskDr
      *                command to complete before terminating the process
      * @return an unmodifiable {@link List} of {@link Win32DiskDrive} objects representing the disk drives.
      * Returns a {@link Collections#emptyList()} if no disk drives are detected.
-     * @since 0.1.0
+     * @since 0.0.1
      */
     @Override
     public @NonNull List<Win32DiskDrive> get(long timeout) {

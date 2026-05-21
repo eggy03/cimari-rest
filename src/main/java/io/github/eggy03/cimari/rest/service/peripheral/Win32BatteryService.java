@@ -4,6 +4,7 @@
  * SPDX-FileCopyrightText: 2026 Cimari contributors
  */
 package io.github.eggy03.cimari.rest.service.peripheral;
+
 import io.github.eggy03.cimari.rest.entity.peripheral.Win32Battery;
 import io.github.eggy03.cimari.rest.mapping.peripheral.Win32BatteryMapper;
 import io.github.eggy03.cimari.rest.service.CommonServiceInterface;
@@ -23,13 +24,7 @@ import java.util.List;
  * and maps the resulting output into an unmodifiable {@link List} of {@link Win32Battery} objects.
  * </p>
  *
- * <h2>Usage examples</h2>
- * <pre>{@code
- * Win32BatteryService service = new Win32BatteryService();
- * List<Win32Battery> batteries = service.get(10);
- * }</pre>
- *
- * @since 0.1.0
+ * @since 0.0.1
  */
 @ApplicationScoped
 @RequiredArgsConstructor
@@ -49,7 +44,7 @@ public class Win32BatteryService implements CommonServiceInterface<Win32Battery>
      *                command to complete before terminating the process
      * @return an unmodifiable {@link List} of {@link Win32Battery} objects representing the system's batteries.
      * If no batteries are present, returns a {@link Collections#emptyList()}.
-     * @since 0.1.0
+     * @since 0.0.1
      */
     @Override
     public @NonNull List<Win32Battery> get(long timeout) {

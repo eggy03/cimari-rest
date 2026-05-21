@@ -25,7 +25,7 @@ import java.util.List;
  * and maps the resulting output into an unmodifiable {@link List} of {@link Win32DesktopMonitor} objects.
  * </p>
  *
- * @since 0.1.0
+ * @since 0.0.1
  */
 @ApplicationScoped
 @RequiredArgsConstructor
@@ -45,7 +45,7 @@ public class Win32DesktopMonitorService implements CommonServiceInterface<Win32D
      *                command to complete before terminating the process
      * @return an unmodifiable {@link List} of {@link Win32DesktopMonitor} objects representing connected monitors.
      * Returns a {@link Collections#emptyList()} if no monitors are detected.
-     * @since 0.1.0
+     * @since 0.0.1
      */
     @Override
     @CacheResult(cacheName = "Win32DesktopMonitor")

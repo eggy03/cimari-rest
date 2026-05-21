@@ -49,7 +49,7 @@ public record Win32Printer(
         @Schema(
                 description = """
                         List of capability codes supported by the printer.
-
+                        
                         Possible values:
                         - 1 - Other
                         - 2 - Color printing
@@ -106,7 +106,7 @@ public record Win32Printer(
         @Schema(
                 description = """
                         Numeric codes of paper sizes supported by the printer.
-
+                        
                         Refer to the Microsoft documentation for the exhaustive list of supported values.
                         """,
                 nullable = true,
@@ -126,7 +126,7 @@ public record Win32Printer(
         @Schema(
                 description = """
                         Current operational state of the printer.
-
+                        
                         Possible values:
                         - 1 - Other
                         - 2 - Unknown
@@ -145,7 +145,7 @@ public record Win32Printer(
         @Schema(
                 description = """
                         Data type of print jobs.
-
+                        
                         Example: RAW or EMF
                         """,
                 nullable = true,
@@ -157,7 +157,7 @@ public record Win32Printer(
         @Schema(
                 description = """
                         Print processor used to process print jobs.
-
+                        
                         Example: WinPrint
                         """,
                 nullable = true,

@@ -24,13 +24,7 @@ import java.util.List;
  * and maps the resulting output into an unmodifiable {@link List} of {@link Win32Printer} objects.
  * </p>
  *
- * <h2>Usage examples</h2>
- * <pre>{@code
- * Win32PrinterService service = new Win32PrinterService();
- * List<Win32Printer> printers = service.get(10);
- * }</pre>
- *
- * @since 0.1.0
+ * @since 0.0.1
  */
 @ApplicationScoped
 @RequiredArgsConstructor
@@ -50,7 +44,7 @@ public class Win32PrinterService implements CommonServiceInterface<Win32Printer>
      *                command to complete before terminating the process
      * @return an unmodifiable {@link List} of {@link Win32Printer} objects representing the system's printers.
      * If no printers are present, returns a {@link Collections#emptyList()}.
-     * @since 0.1.0
+     * @since 0.0.1
      */
     @Override
     public @NonNull List<Win32Printer> get(long timeout) {

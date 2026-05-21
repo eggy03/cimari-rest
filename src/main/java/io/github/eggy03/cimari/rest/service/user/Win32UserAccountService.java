@@ -25,13 +25,7 @@ import java.util.List;
  * and maps the resulting output into an unmodifiable {@link List} of {@link Win32UserAccount} objects.
  * </p>
  *
- * <h2>Usage examples</h2>
- * <pre>{@code
- * Win32UserAccountService service = new Win32UserAccountService();
- * List<Win32UserAccount> ua = service.get(10);
- * }</pre>
- *
- * @since 0.1.0
+ * @since 0.0.1
  */
 @ApplicationScoped
 @RequiredArgsConstructor
@@ -51,7 +45,7 @@ public class Win32UserAccountService implements CommonServiceInterface<Win32User
      *                command to complete before terminating the process
      * @return an unmodifiable {@link List} of {@link Win32UserAccount} objects.
      * Returns a {@link Collections#emptyList()} if no user accounts are detected.
-     * @since 0.1.0
+     * @since 0.0.1
      */
     @Override
     public @NonNull List<Win32UserAccount> get(long timeout) {

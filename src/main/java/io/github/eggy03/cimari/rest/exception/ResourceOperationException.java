@@ -10,7 +10,7 @@ import lombok.experimental.StandardException;
 /**
  * Usually thrown to indicate that necessary I/O operations on a resource has failed
  *
- * @since 0.1.0
+ * @since 0.0.1
  */
 @StandardException
 public class ResourceOperationException extends RuntimeException {

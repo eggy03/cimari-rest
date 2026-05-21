@@ -24,7 +24,8 @@ import java.util.List;
  * This class executes the {@link Cimv2#WIN32_BIOS} PowerShell command
  * and maps the resulting output into an unmodifiable {@link List} of {@link Win32Bios} objects.
  * </p>
- * @since 0.1.0
+ *
+ * @since 0.0.1
  */
 @ApplicationScoped
 @RequiredArgsConstructor
@@ -44,7 +45,7 @@ public class Win32BiosService implements CommonServiceInterface<Win32Bios> {
      *                command to complete before terminating the process
      * @return an unmodifiable {@link List} of {@link Win32Bios} objects representing the system BIOS.
      * Returns a {@link Collections#emptyList()} if no BIOS entries are detected.
-     * @since 0.1.0
+     * @since 0.0.1
      */
     @Override
     @CacheResult(cacheName = "Win32Bios")

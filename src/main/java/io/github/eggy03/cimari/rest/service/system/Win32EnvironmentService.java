@@ -25,13 +25,7 @@ import java.util.List;
  * and maps the resulting output into an unmodifiable {@link List} of {@link Win32Environment} objects.
  * </p>
  *
- * <h2>Usage examples</h2>
- * <pre>{@code
- * Win32EnvironmentService service = new Win32EnvironmentService();
- * List<Win32Environment> env = service.get(10);
- * }</pre>
- *
- * @since 0.1.0
+ * @since 0.0.1
  */
 @ApplicationScoped
 @RequiredArgsConstructor
@@ -52,7 +46,7 @@ public class Win32EnvironmentService implements CommonServiceInterface<Win32Envi
      *                command to complete before terminating the process
      * @return an unmodifiable {@link List} of {@link Win32Environment} objects representing the env variables.
      * Returns a {@link Collections#emptyList()} if no env variables are detected.
-     * @since 0.1.0
+     * @since 0.0.1
      */
     @Override
     public @NonNull List<Win32Environment> get(long timeout) {

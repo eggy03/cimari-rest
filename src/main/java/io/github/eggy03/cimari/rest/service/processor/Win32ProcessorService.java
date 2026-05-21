@@ -25,7 +25,7 @@ import java.util.List;
  * and maps the resulting output into {@link Win32Processor} objects.
  * </p>
  *
- * @since 0.1.0
+ * @since 0.0.1
  */
 @RequiredArgsConstructor
 @ApplicationScoped
@@ -45,7 +45,7 @@ public class Win32ProcessorService implements CommonServiceInterface<Win32Proces
      *                command to complete before terminating the process
      * @return an unmodifiable {@link List} of {@link Win32Processor} objects representing the CPU(s).
      * Returns a {@link Collections#emptyList()} if no processors are detected.
-     * @since 0.1.0
+     * @since 0.0.1
      */
     @Override
     @CacheResult(cacheName = "Win32Processor")

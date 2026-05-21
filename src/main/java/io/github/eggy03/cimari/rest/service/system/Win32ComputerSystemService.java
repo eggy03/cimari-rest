@@ -23,13 +23,7 @@ import java.util.Optional;
  * and maps the resulting output into an {@link Optional} {@link Win32ComputerSystem} with default configuration.
  * </p>
  *
- * <h2>Usage examples</h2>
- * <pre>{@code
- * Win32ComputerSystemService service = new Win32ComputerSystemService();
- * Optional<Win32ComputerSystem> system = service.get(10);
- * }</pre>
- *
- * @since 0.1.0
+ * @since 0.0.1
  */
 @ApplicationScoped
 @RequiredArgsConstructor
@@ -50,7 +44,7 @@ public class Win32ComputerSystemService implements OptionalCommonServiceInterfac
      * @return an {@link Optional} of {@link Win32ComputerSystem} representing
      * the HWID. Returns {@link Optional#empty()} if no information
      * is detected.
-     * @since 0.1.0
+     * @since 0.0.1
      */
     @Override
     public @NonNull Optional<Win32ComputerSystem> get(long timeout) {

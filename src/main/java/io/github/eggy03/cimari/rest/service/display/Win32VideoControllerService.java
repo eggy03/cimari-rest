@@ -25,7 +25,7 @@ import java.util.List;
  * and maps the resulting output into an unmodifiable {@link List} of {@link Win32VideoController} objects.
  * </p>
  *
- * @since 0.1.0
+ * @since 0.0.1
  */
 @ApplicationScoped
 @RequiredArgsConstructor
@@ -45,7 +45,7 @@ public class Win32VideoControllerService implements CommonServiceInterface<Win32
      *                command to complete before terminating the process
      * @return an unmodifiable {@link List} of {@link Win32VideoController} objects representing the video controllers.
      * Returns a {@link Collections#emptyList()} if none are detected.
-     * @since 0.1.0
+     * @since 0.0.1
      */
     @Override
     @CacheResult(cacheName = "Win32VideoController")

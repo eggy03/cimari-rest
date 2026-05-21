@@ -24,13 +24,7 @@ import java.util.List;
  * and maps the resulting output into an unmodifiable {@link List} of {@link Win32LogicalDisk} objects.
  * </p>
  *
- * <h2>Usage examples</h2>
- * <pre>{@code
- * Win32LogicalDiskService service = new Win32LogicalDiskService();
- * List<Win32LogicalDisk> logicalDisks = service.get(10);
- * }</pre>
- *
- * @since 0.1.0
+ * @since 0.0.1
  */
 @ApplicationScoped
 @RequiredArgsConstructor
@@ -50,7 +44,7 @@ public class Win32LogicalDiskService implements CommonServiceInterface<Win32Logi
      *                command to complete before terminating the process
      * @return an unmodifiable {@link List} of {@link Win32LogicalDisk} objects representing the logical volumes.
      * Returns a {@link Collections#emptyList()} if no volumes are detected.
-     * @since 0.1.0
+     * @since 0.0.1
      */
     @Override
     public @NonNull List<Win32LogicalDisk> get(long timeout) {

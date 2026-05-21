@@ -473,18 +473,18 @@ public record Win32ComputerSystem(
         Boolean daylightInEffect
 
 ) {
-        // I think im going insane
-        public Win32ComputerSystem() {
-                this(null, null, null, null,
-                        null, null, null, null,
-                        null, null, null,
-                        null, null, null, null,
-                        null, null, null, null, null, null,
-                        null, null, null, null,
-                        null, null, null, null, null,
-                        null, null, null,
-                        null, null, null,
-                        null, null, null, null
-                );
-        }
+    // I think im going insane
+    public Win32ComputerSystem() {
+        this(null, null, null, null,
+                null, null, null, null,
+                null, null, null,
+                null, null, null, null,
+                null, null, null, null, null, null,
+                null, null, null, null,
+                null, null, null, null, null,
+                null, null, null,
+                null, null, null,
+                null, null, null, null
+        );
+    }
 }
