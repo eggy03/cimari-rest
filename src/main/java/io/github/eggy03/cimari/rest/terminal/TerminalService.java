@@ -7,6 +7,7 @@ package io.github.eggy03.cimari.rest.terminal;
 
 import io.github.eggy03.cimari.rest.exception.TerminalIOException;
 import io.github.eggy03.cimari.rest.shell.query.Cimv2;
+import io.github.eggy03.cimari.rest.shell.query.StandardCimv2;
 import jakarta.enterprise.context.ApplicationScoped;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
@@ -19,7 +20,6 @@ import org.apache.commons.exec.PumpStreamHandler;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.Objects;
 
 /**
  * A service class that provides a way to launch a PowerShell session and execute scripts or commands in it
@@ -41,7 +41,17 @@ public class TerminalService {
      * @return The result of the query executed, wrapped in {@link TerminalResult}
      */
     public @NonNull TerminalResult executeQuery(@NonNull Cimv2 queryEnum, long timeoutSeconds) {
-        Objects.requireNonNull(queryEnum, "queryEnum cannot be null");
+        return execute(queryEnum.getQuery(), timeoutSeconds);
+    }
+
+    /**
+     * Launches a standalone PowerShell session, executes {@link StandardCimv2} queries and returns the result
+     *
+     * @param queryEnum      The non-null enum value containing the loaded query which shall be executed
+     * @param timeoutSeconds The non-null, positive value of time in seconds after which the session will be force stopped.
+     * @return The result of the query executed, wrapped in {@link TerminalResult}
+     */
+    public @NonNull TerminalResult executeQuery(@NonNull StandardCimv2 queryEnum, long timeoutSeconds) {
         return execute(queryEnum.getQuery(), timeoutSeconds);
     }
 
@@ -56,8 +66,6 @@ public class TerminalService {
      * @since 0.1.0
      */
     @NonNull TerminalResult execute(@NonNull String command, long timeout) {
-
-        Objects.requireNonNull(command, "query or script to be executed cannot be null");
 
         if (timeout < 0)
             throw new IllegalArgumentException("Timeout cannot be negative");
