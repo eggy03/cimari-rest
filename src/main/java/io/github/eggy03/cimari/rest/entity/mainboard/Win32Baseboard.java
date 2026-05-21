@@ -7,24 +7,56 @@ package io.github.eggy03.cimari.rest.entity.mainboard;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.github.eggy03.cimari.rest.annotation.WmiClass;
+import io.quarkus.runtime.annotations.RegisterForReflection;
+import org.eclipse.microprofile.openapi.annotations.enums.SchemaType;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
-/**
- * Immutable representation of a motherboard device on a Windows system.
- * <p>
- * Fields correspond to properties retrieved from the {@code Win32_Baseboard} WMI class.
- * </p>
- *
- * <p>
- * {@link Win32PortConnector} contains details about ports on this mainboard.
- *
- * @see <a href="https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-baseboard">Win32_Baseboard Documentation</a>
- * @since 0.1.0
- */
 @WmiClass(className = "Win32_Baseboard")
-public record Win32Baseboard (
-    @JsonProperty("Manufacturer") String manufacturer,
-    @JsonProperty("Model") String model,
-    @JsonProperty("Product") String product,
-    @JsonProperty("SerialNumber") String serialNumber,
-    @JsonProperty("Version") String version
-) {}
+@RegisterForReflection
+@Schema(name = "Win32_Baseboard",
+        description = "[Documentation](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-baseboard)"
+)
+public record Win32Baseboard(
+
+        @JsonProperty("Manufacturer")
+        @Schema(
+                description = "Name of the organization responsible for producing the baseboard.",
+                nullable = true,
+                type = SchemaType.STRING
+        )
+        String manufacturer,
+
+        @JsonProperty("Model")
+        @Schema(
+                description = "Name by which the baseboard is known.",
+                nullable = true,
+                type = SchemaType.STRING
+        )
+        String model,
+
+        @JsonProperty("Product")
+        @Schema(
+                description = "Baseboard part number defined by the manufacturer.",
+                nullable = true,
+                type = SchemaType.STRING
+        )
+        String product,
+
+        @JsonProperty("SerialNumber")
+        @Schema(
+                description = "Manufacturer-allocated number used to identify the baseboard.",
+                nullable = true,
+                type = SchemaType.STRING
+        )
+        String serialNumber,
+
+        @JsonProperty("Version")
+        @Schema(
+                description = "Version of the baseboard.",
+                nullable = true,
+                type = SchemaType.STRING
+        )
+        String version
+
+) {
+}

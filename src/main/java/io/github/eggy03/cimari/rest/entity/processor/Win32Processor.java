@@ -8,40 +8,202 @@ package io.github.eggy03.cimari.rest.entity.processor;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.github.eggy03.cimari.rest.annotation.WmiClass;
 import io.quarkus.runtime.annotations.RegisterForReflection;
+import org.eclipse.microprofile.openapi.annotations.enums.SchemaType;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
-/**
- * Representation of a CPU device on a Windows system.
- * <p>
- * Fields correspond to properties retrieved from the {@code Win32_Processor} WMI class.
- * </p>
- * <p>
- * See {@link Win32CacheMemory} for related cache information.
- *
- * @see <a href="https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-processor">Win32_Processor Documentation</a>
- * @since 0.1.0
- */
 @WmiClass(className = "Win32_Processor")
 @RegisterForReflection
+@Schema(name = "Win32_Processor",
+        description = "[Documentation](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-processor)"
+)
 public record Win32Processor(
 
-        @JsonProperty("DeviceID") String deviceId,
-        @JsonProperty("Name") String name,
-        @JsonProperty("NumberOfCores") Integer numberOfCores,
-        @JsonProperty("NumberOfEnabledCore") Integer numberOfEnabledCores,
-        @JsonProperty("ThreadCount") Integer threadCount,
-        @JsonProperty("NumberOfLogicalProcessors") Integer numberOfLogicalProcessors,
-        @JsonProperty("Manufacturer") String manufacturer,
-        @JsonProperty("AddressWidth") Integer addressWidth,
-        @JsonProperty("L2CacheSize") Integer l2CacheSize,
-        @JsonProperty("L3CacheSize") Integer l3CacheSize,
-        @JsonProperty("MaxClockSpeed") Integer maxClockSpeed,
-        @JsonProperty("ExtClock") Integer extClock,
-        @JsonProperty("SocketDesignation") String socketDesignation,
-        @JsonProperty("Version") String version,
-        @JsonProperty("Caption") String caption,
-        @JsonProperty("Family") Integer family,
-        @JsonProperty("Stepping") String stepping,
-        @JsonProperty("VirtualizationFirmwareEnabled") Boolean virtualizationFirmwareEnabled,
-        @JsonProperty("ProcessorId") String processorId,
-        @JsonProperty("Architecture") Integer architecture
-) {}
+        @JsonProperty("DeviceID")
+        @Schema(
+                description = "Unique identifier of the processor on the system.",
+                nullable = true,
+                type = SchemaType.STRING
+        )
+        String deviceId,
+
+        @JsonProperty("Name")
+        @Schema(
+                description = "Processor name. Typically includes manufacturer, brand, and model information.",
+                nullable = true,
+                type = SchemaType.STRING
+        )
+        String name,
+
+        @JsonProperty("NumberOfCores")
+        @Schema(
+                description = "Number of physical cores on the processor.",
+                nullable = true,
+                type = SchemaType.INTEGER
+        )
+        Integer numberOfCores,
+
+        @JsonProperty("NumberOfEnabledCore")
+        @Schema(
+                description = "Number of enabled processor cores.",
+                nullable = true,
+                type = SchemaType.INTEGER
+        )
+        Integer numberOfEnabledCores,
+
+        @JsonProperty("ThreadCount")
+        @Schema(
+                description = "Number of hardware threads across all cores.",
+                nullable = true,
+                type = SchemaType.INTEGER
+        )
+        Integer threadCount,
+
+        @JsonProperty("NumberOfLogicalProcessors")
+        @Schema(
+                description = "Number of logical processors on the system.",
+                nullable = true,
+                type = SchemaType.INTEGER
+        )
+        Integer numberOfLogicalProcessors,
+
+        @JsonProperty("Manufacturer")
+        @Schema(
+                description = "Name of the processor manufacturer.",
+                nullable = true,
+                type = SchemaType.STRING
+        )
+        String manufacturer,
+
+        @JsonProperty("AddressWidth")
+        @Schema(
+                description = """
+                        Width of the processor address bus in bits.
+                        
+                        For a 32-bit CPU the value is 32 and for a 64-bit CPU,
+                        the value is 64.
+                        """,
+                nullable = true,
+                type = SchemaType.INTEGER
+        )
+        Integer addressWidth,
+
+        @JsonProperty("L2CacheSize")
+        @Schema(
+                description = "Size of the Level 2 cache in kilobytes.",
+                nullable = true,
+                type = SchemaType.INTEGER
+        )
+        Integer l2CacheSize,
+
+        @JsonProperty("L3CacheSize")
+        @Schema(
+                description = "Size of the Level 3 cache in kilobytes.",
+                nullable = true,
+                type = SchemaType.INTEGER
+        )
+        Integer l3CacheSize,
+
+        @JsonProperty("MaxClockSpeed")
+        @Schema(
+                description = """
+                        Maximum speed of the processor in megahertz
+                        under normal operating conditions.
+                        """,
+                nullable = true,
+                type = SchemaType.INTEGER
+        )
+        Integer maxClockSpeed,
+
+        @JsonProperty("ExtClock")
+        @Schema(
+                description = "External clock frequency of the processor in megahertz.",
+                nullable = true,
+                type = SchemaType.INTEGER
+        )
+        Integer extClock,
+
+        @JsonProperty("SocketDesignation")
+        @Schema(
+                description = "Type of socket or slot used by the processor.",
+                nullable = true,
+                type = SchemaType.STRING
+        )
+        String socketDesignation,
+
+        @JsonProperty("Version")
+        @Schema(
+                description = "Version of the processor as reported by the manufacturer.",
+                nullable = true,
+                type = SchemaType.STRING
+        )
+        String version,
+
+        @JsonProperty("Caption")
+        @Schema(
+                description = "Short textual description of the processor.",
+                nullable = true,
+                type = SchemaType.STRING
+        )
+        String caption,
+
+        @JsonProperty("Family")
+        @Schema(
+                description = """
+                        Processor family type.
+                        
+                        Indicates the manufacturer and generation of the processor.
+                        """,
+                nullable = true,
+                type = SchemaType.INTEGER
+        )
+        Integer family,
+
+        @JsonProperty("Stepping")
+        @Schema(
+                description = "Stepping information for the processor revision.",
+                nullable = true,
+                type = SchemaType.STRING
+        )
+        String stepping,
+
+        @JsonProperty("VirtualizationFirmwareEnabled")
+        @Schema(
+                description = "Indicates whether virtualization technology is enabled in firmware.",
+                nullable = true,
+                type = SchemaType.BOOLEAN
+        )
+        Boolean virtualizationFirmwareEnabled,
+
+        @JsonProperty("ProcessorId")
+        @Schema(
+                description = """
+                        Processor identifier string, which may include family,
+                        model, and stepping information.
+                        """,
+                nullable = true,
+                type = SchemaType.STRING
+        )
+        String processorId,
+
+        @JsonProperty("Architecture")
+        @Schema(
+                description = """
+                        Processor architecture used by the platform.
+                        
+                        Possible values:
+                        - x86 (0)
+                        - MIPS (1)
+                        - Alpha (2)
+                        - PowerPC (3)
+                        - ARM (5)
+                        - ia64 (6)
+                        - x64 (9)
+                        - ARM64 (12)
+                        """,
+                nullable = true,
+                type = SchemaType.INTEGER
+        )
+        Integer architecture
+
+) {
+}
