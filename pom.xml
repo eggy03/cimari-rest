@@ -19,6 +19,7 @@
 
         <lombok.version>1.18.46</lombok.version>
         <commons.exec.version>1.6.0</commons.exec.version>
+        <assertj.core.version>3.27.7</assertj.core.version>
 
         <compiler-plugin.version>3.15.0</compiler-plugin.version>
         <surefire-plugin.version>3.5.5</surefire-plugin.version>
@@ -76,6 +77,12 @@
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj.core.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
