@@ -66,13 +66,13 @@ Build a native executable using GraalVM or Mandrel:
 Run the executable with:
 
 ```shell
-./target/cimari-rest-*-runner
+./target/cimari-rest-runner
 ```
 
 Set your custom port with:
 
 ```shell
-./target/cimari-rest-*-runner "-Dquarkus.http.port=<port>"
+./target/cimari-rest-runner "-Dquarkus.http.port=<port>"
 ```
 
 ---
