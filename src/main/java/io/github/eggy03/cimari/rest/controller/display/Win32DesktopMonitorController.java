@@ -13,7 +13,7 @@ import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import java.util.List;
 
-@Path("api/v1/monitor")
+@Path("api/v1/display")
 @Produces(MediaType.APPLICATION_JSON)
 @RequiredArgsConstructor
 @Tag(name = "Display")
@@ -22,6 +22,7 @@ public class Win32DesktopMonitorController {
     private final Win32DesktopMonitorService service;
 
     @GET
+    @Path("/monitor")
     @Operation(summary = "List of Win32_DesktopMonitor objects")
     @APIResponse(responseCode = "200", description = "Success")
     public List<Win32DesktopMonitor> getAll() {

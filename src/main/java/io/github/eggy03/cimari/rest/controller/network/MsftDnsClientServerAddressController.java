@@ -18,7 +18,7 @@ import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import java.util.List;
 
-@Path("api/v1/network/dns")
+@Path("api/v1/network")
 @Produces(MediaType.APPLICATION_JSON)
 @RequiredArgsConstructor
 @Tag(name = "Network")
@@ -27,6 +27,7 @@ public class MsftDnsClientServerAddressController {
     private final MsftDnsClientServerAddressService service;
 
     @GET
+    @Path("/dns")
     @Operation(summary = "List of MSFT_DNSClientServerAddress objects")
     @APIResponse(responseCode = "200", description = "Success")
     public List<MsftDnsClientServerAddress> getAll() {

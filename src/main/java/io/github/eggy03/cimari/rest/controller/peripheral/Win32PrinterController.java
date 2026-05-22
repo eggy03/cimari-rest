@@ -13,7 +13,7 @@ import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import java.util.List;
 
-@Path("api/v1/printer")
+@Path("api/v1/peripheral")
 @Produces(MediaType.APPLICATION_JSON)
 @RequiredArgsConstructor
 @Tag(name = "Peripheral")
@@ -22,6 +22,7 @@ public class Win32PrinterController {
     private final Win32PrinterService service;
 
     @GET
+    @Path("/printer")
     @Operation(summary = "List of Win32_Printer objects")
     @APIResponse(responseCode = "200", description = "Success")
     public List<Win32Printer> getAll() {

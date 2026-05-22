@@ -13,7 +13,7 @@ import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import java.util.List;
 
-@Path("api/v1/bios")
+@Path("api/v1/mainboard")
 @Produces(MediaType.APPLICATION_JSON)
 @RequiredArgsConstructor
 @Tag(name = "Mainboard")
@@ -22,6 +22,7 @@ public class Win32BiosController {
     private final Win32BiosService service;
 
     @GET
+    @Path("/bios")
     @Operation(summary = "List of Win32_BIOS objects")
     @APIResponse(responseCode = "200", description = "Success")
     public List<Win32Bios> getAll() {

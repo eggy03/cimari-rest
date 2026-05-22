@@ -18,7 +18,7 @@ import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import java.util.List;
 
-@Path("api/v1/network/ip")
+@Path("api/v1/network")
 @Produces(MediaType.APPLICATION_JSON)
 @RequiredArgsConstructor
 @Tag(name = "Network")
@@ -27,6 +27,7 @@ public class MsftNetIpAddressController {
     private final MsftNetIpAddressService service;
 
     @GET
+    @Path("/ip")
     @Operation(summary = "List of MSFT_NetIPAddress objects")
     @APIResponse(responseCode = "200", description = "Success")
     public List<MsftNetIpAddress> getAll() {

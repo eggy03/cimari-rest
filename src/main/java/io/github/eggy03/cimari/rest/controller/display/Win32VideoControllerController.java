@@ -13,7 +13,7 @@ import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import java.util.List;
 
-@Path("api/v1/videocontroller")
+@Path("api/v1/display")
 @Produces(MediaType.APPLICATION_JSON)
 @RequiredArgsConstructor
 @Tag(name = "Display")
@@ -22,6 +22,7 @@ public class Win32VideoControllerController {
     private final Win32VideoControllerService service;
 
     @GET
+    @Path("/videocontroller")
     @Operation(summary = "List of Win32_VideoController objects")
     @APIResponse(responseCode = "200", description = "Success")
     public List<Win32VideoController> getAll() {

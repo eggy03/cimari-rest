@@ -13,7 +13,7 @@ import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import java.util.List;
 
-@Path("api/v1/sound")
+@Path("api/v1/peripheral")
 @Produces(MediaType.APPLICATION_JSON)
 @RequiredArgsConstructor
 @Tag(name = "Peripheral")
@@ -22,6 +22,7 @@ public class Win32SoundDeviceController {
     private final Win32SoundDeviceService service;
 
     @GET
+    @Path("/sound")
     @Operation(summary = "List of Win32_SoundDevice objects")
     @APIResponse(responseCode = "200", description = "Success")
     public List<Win32SoundDevice> getAll() {

@@ -13,7 +13,7 @@ import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import java.util.List;
 
-@Path("api/v1/disk/logical")
+@Path("api/v1/disk")
 @Produces(MediaType.APPLICATION_JSON)
 @RequiredArgsConstructor
 @Tag(name = "Storage")
@@ -22,6 +22,7 @@ public class Win32LogicalDiskController {
     private final Win32LogicalDiskService service;
 
     @GET
+    @Path("/logicaldisk")
     @Operation(summary = "List of Win32_LogicalDisk objects")
     @APIResponse(responseCode = "200", description = "Success")
     public List<Win32LogicalDisk> getAll() {

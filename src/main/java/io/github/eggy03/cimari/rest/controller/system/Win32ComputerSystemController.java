@@ -11,7 +11,7 @@ import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
-@Path("api/v1/computer")
+@Path("api/v1/system")
 @Produces(MediaType.APPLICATION_JSON)
 @RequiredArgsConstructor
 @Tag(name = "System")
@@ -20,7 +20,8 @@ public class Win32ComputerSystemController {
     private final Win32ComputerSystemService service;
 
     @GET
-    @Operation(summary = "List of Win32_ComputerSystem objects")
+    @Path("/computer")
+    @Operation(summary = "Win32_ComputerSystem Object")
     @APIResponse(responseCode = "200", description = "Success")
     public Win32ComputerSystem get() {
         return service.get(15).orElse(new Win32ComputerSystem());

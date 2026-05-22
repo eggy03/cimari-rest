@@ -13,7 +13,7 @@ import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import java.util.List;
 
-@Path("api/v1/cache")
+@Path("api/v1/processor")
 @Produces(MediaType.APPLICATION_JSON)
 @RequiredArgsConstructor
 @Tag(name = "Processor")
@@ -22,6 +22,7 @@ public class Win32CacheMemoryController {
     private final Win32CacheMemoryService service;
 
     @GET
+    @Path("/cache")
     @Operation(summary = "List of Win32_CacheMemory objects")
     @APIResponse(responseCode = "200", description = "Success")
     public List<Win32CacheMemory> getAll() {

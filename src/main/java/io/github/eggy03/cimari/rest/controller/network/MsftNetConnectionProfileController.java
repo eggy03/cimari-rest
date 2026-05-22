@@ -18,7 +18,7 @@ import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import java.util.List;
 
-@Path("api/v1/network/profile")
+@Path("api/v1/network")
 @Produces(MediaType.APPLICATION_JSON)
 @RequiredArgsConstructor
 @Tag(name = "Network")
@@ -27,6 +27,7 @@ public class MsftNetConnectionProfileController {
     private final MsftNetConnectionProfileService service;
 
     @GET
+    @Path("/profile")
     @Operation(summary = "List of MSFT_NetConnectionProfile objects")
     @APIResponse(responseCode = "200", description = "Success")
     public List<MsftNetConnectionProfile> getAll() {

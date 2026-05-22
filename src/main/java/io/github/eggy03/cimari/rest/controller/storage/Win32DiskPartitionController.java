@@ -13,7 +13,7 @@ import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import java.util.List;
 
-@Path("api/v1/disk/partition")
+@Path("api/v1/disk")
 @Produces(MediaType.APPLICATION_JSON)
 @RequiredArgsConstructor
 @Tag(name = "Storage")
@@ -22,6 +22,7 @@ public class Win32DiskPartitionController {
     private final Win32DiskPartitionService service;
 
     @GET
+    @Path("/partition")
     @Operation(summary = "List of Win32_DiskPartition objects")
     @APIResponse(responseCode = "200", description = "Success")
     public List<Win32DiskPartition> getAll() {

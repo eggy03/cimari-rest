@@ -13,7 +13,7 @@ import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import java.util.List;
 
-@Path("api/v1/os")
+@Path("api/v1/system")
 @Produces(MediaType.APPLICATION_JSON)
 @RequiredArgsConstructor
 @Tag(name = "System")
@@ -22,6 +22,7 @@ public class Win32OperatingSystemController {
     private final Win32OperatingSystemService service;
 
     @GET
+    @Path("/os")
     @Operation(summary = "List of Win32_OperatingSystem objects")
     @APIResponse(responseCode = "200", description = "Success")
     public List<Win32OperatingSystem> getAll() {

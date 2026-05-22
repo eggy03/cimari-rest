@@ -13,7 +13,7 @@ import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import java.util.List;
 
-@Path("api/v1/pnp")
+@Path("api/v1/system")
 @Produces(MediaType.APPLICATION_JSON)
 @RequiredArgsConstructor
 @Tag(name = "System")
@@ -22,6 +22,7 @@ public class Win32PnPEntityController {
     private final Win32PnPEntityService service;
 
     @GET
+    @Path("/pnp")
     @Operation(summary = "List of Win32_PnPEntity objects")
     @APIResponse(responseCode = "200", description = "Success")
     public List<Win32PnPEntity> getAll() {

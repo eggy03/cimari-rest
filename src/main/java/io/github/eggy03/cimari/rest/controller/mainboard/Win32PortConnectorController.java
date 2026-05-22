@@ -13,7 +13,7 @@ import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import java.util.List;
 
-@Path("api/v1/port")
+@Path("api/v1/mainboard")
 @Produces(MediaType.APPLICATION_JSON)
 @RequiredArgsConstructor
 @Tag(name = "Mainboard")
@@ -22,6 +22,7 @@ public class Win32PortConnectorController {
     private final Win32PortConnectorService service;
 
     @GET
+    @Path("/port")
     @Operation(summary = "List of Win32_PortConnector objects")
     @APIResponse(responseCode = "200", description = "Success")
     public List<Win32PortConnector> getAll() {

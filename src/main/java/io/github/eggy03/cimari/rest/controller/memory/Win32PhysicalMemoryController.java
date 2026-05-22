@@ -22,6 +22,7 @@ public class Win32PhysicalMemoryController {
     private final Win32PhysicalMemoryService service;
 
     @GET
+    @Path("/physical")
     @Operation(summary = "List of Win32_PhysicalMemory objects")
     @APIResponse(responseCode = "200", description = "Success")
     public List<Win32PhysicalMemory> getAll() {
