@@ -39,20 +39,20 @@ You can change the port using
 
 To produce a self-contained executable JAR:
 
-```bash
+```shell
 ./mvnw clean package
 ```
 
 Run the generated artifact using:
 
-```bash
-java -jar target/cimari-rest-*-runner.jar
+```shell
+java -jar target/cimari-rest-runner.jar
 ```
 
 Set your custom port with:
 
 ```shell
- java "-Dquarkus.http.port=<port>" -jar target/cimari-rest-*-runner.jar
+ java "-Dquarkus.http.port=<port>" -jar target/cimari-rest-runner.jar
 ```
 
 ### Native Mode
@@ -60,7 +60,7 @@ Set your custom port with:
 Build a native executable using GraalVM or Mandrel:
 
 ```shell
-./mvnw package -Dnative
+./mvnw clean package -Dnative
 ```
 
 Run the executable with:
