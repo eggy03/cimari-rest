@@ -19,6 +19,25 @@ The following headings may be used while categorizing the list of changes made i
 - Documentation
 - Known Issues
 
+## [0.0.2] - May 24, 2026
+
+### Non-Breaking Changes
+
+- Datetime inner record in MsftNetIpAddress record has been made public
+- Remove redundant `Objects.requireNonNull` checks in `QueryUtility.java` since Lombok's `@Nonnull` adds runtime checks
+
+### Test Changes
+
+- Add unit tests for controllers, mappers, services and utility classes
+- Add `run-tests.yml` workflow
+
+### Dependency Updates
+
+- Add assertj-core 3.27.7
+- Add quarkus-junit-mockito
+
+###
+
 ## [0.0.1] - May 22, 2026
 
 - Initial Release
