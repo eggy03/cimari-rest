@@ -9,7 +9,7 @@ import lombok.experimental.StandardException;
 
 /**
  * Usually thrown to indicate that necessary I/O operations on a resource has failed
- *
+ * <p>Mapped by {@link io.github.eggy03.cimari.rest.exception.mapper.GenericExceptionMapper}</p>
  * @since 0.0.1
  */
 @StandardException

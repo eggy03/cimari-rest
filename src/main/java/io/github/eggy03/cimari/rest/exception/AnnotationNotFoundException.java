@@ -9,7 +9,7 @@ import lombok.experimental.StandardException;
 
 /**
  * Indicates that a given annotation is not found during runtime.
- *
+ * <p>Mapped by {@link io.github.eggy03.cimari.rest.exception.mapper.GenericExceptionMapper}</p>
  * @since 0.0.1
  */
 @StandardException

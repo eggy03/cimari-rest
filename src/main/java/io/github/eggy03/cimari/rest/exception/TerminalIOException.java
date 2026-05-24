@@ -10,7 +10,7 @@ import lombok.experimental.StandardException;
 
 /**
  * A generic wrapper for all IO exceptions occurring from {@link TerminalService}
- *
+ * <p>Mapped by {@link io.github.eggy03.cimari.rest.exception.mapper.GenericExceptionMapper}</p>
  * @since 0.0.1
  */
 @StandardException
