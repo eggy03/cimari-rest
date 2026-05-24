@@ -19,6 +19,12 @@ The following headings may be used while categorizing the list of changes made i
 - Documentation
 - Known Issues
 
+## [0.0.3] - May 25, 2026
+
+### Non-Breaking Changes
+
+- Add exception mapping for all Java exceptions to `jakarta.ws.rs.core.Response`
+
 ## [0.0.2] - May 24, 2026
 
 ### Non-Breaking Changes
