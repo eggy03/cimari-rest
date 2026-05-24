@@ -150,7 +150,7 @@ public record MsftNetIpAddress(
 
     @RegisterForReflection
     @Schema(name = "Datetime", description = "Datetime object for MSFT_NetIPAddress")
-    record Datetime(
+    public record Datetime(
 
             @JsonProperty("Days")
             @Schema(

@@ -40,8 +40,6 @@ class QueryUtility {
      */
     static @NonNull <T> String getClassNameFromWmiClass(@NonNull Class<T> tClass) {
 
-        Objects.requireNonNull(tClass, "tClass cannot be null");
-
         WmiClass wmiClass = tClass.getAnnotation(WmiClass.class);
 
         if (wmiClass == null)
@@ -66,8 +64,6 @@ class QueryUtility {
      * @since 0.0.1
      */
     static @NonNull <T> String getPropertiesFromJsonProperty(@NonNull Class<T> tClass) {
-
-        Objects.requireNonNull(tClass, "tClass cannot be null");
 
         return Arrays.stream(tClass.getDeclaredFields())
                 .filter(field -> !field.isSynthetic()) // filter out synthetic fields since JaCoCo creates $jacocoData method during tests which fails the assertions. This behavior is not observed in scenarios where code coverage is not run
