@@ -10,7 +10,7 @@ import lombok.experimental.StandardException;
 /**
  * Used to indicate that a critical resource could not be resolved, without which, it is impossible to
  * proceed with further operations.
- *
+ * <p>Mapped by {@link io.github.eggy03.cimari.rest.exception.mapper.GenericExceptionMapper}</p>
  * @since 0.0.1
  */
 @StandardException
