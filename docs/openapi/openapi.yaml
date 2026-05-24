@@ -1,0 +1,3301 @@
+---
+openapi: 3.1.0
+components:
+  schemas:
+    Datetime:
+      description: Lifetime during which the address is preferred for use.
+      type:
+        - object
+        - "null"
+      properties:
+        Days:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: Number of days.
+        Hours:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: Number of hours.
+        Minutes:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: Number of minutes.
+        Seconds:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: Number of seconds.
+    ErrorResponse:
+      description: Standard API error response
+      type: object
+      properties:
+        status:
+          type: integer
+          format: int32
+          description: HTTP Status Code
+        error:
+          type: string
+          description: Exception Class Name
+        message:
+          type: string
+          description: Exception Message
+        timeStamp:
+          type: string
+          format: date-time
+          examples:
+            - 2022-03-10T12:15:50
+          description: Timestamp
+        path:
+          type: string
+          description: Endpoint Path
+    MSFT_DNSClientServerAddress:
+      description: "[Documentation](https://learn.microsoft.com/en-us/windows/win32/fwp/wmi/dnsclientcimprov/msft-dnsclientserveraddress)"
+      type: object
+      properties:
+        InterfaceIndex:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: |
+            Gets the user-friendly index of the server interface.
+
+            It's the unique interface index number used by the network stack.
+        InterfaceAlias:
+          type:
+            - string
+            - "null"
+          description: Gets the user-friendly name of the server interface.
+        AddressFamily:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Gets the address family of the server address.
+
+            Possible values:
+            - 2  - IPv4
+            - 23 - IPv6
+        ServerAddresses:
+          type:
+            - array
+            - "null"
+          items:
+            type: string
+          description: Gets a list that contains the DNS server addresses.
+    MSFT_NetAdapter:
+      description: "[Documentation](https://learn.microsoft.com/en-us/windows/win32/fwp/wmi/netadaptercimprov/msft-netadapter)"
+      type: object
+      properties:
+        DeviceID:
+          type:
+            - string
+            - "null"
+          description: Uniquely identifies the network adapter on the system.
+        PnPDeviceID:
+          type:
+            - string
+            - "null"
+          description: Plug and Play (PnP) device identifier assigned to the adapter
+            by Windows.
+        InterfaceIndex:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: ' Unique interface index number used by the network stack.'
+        InterfaceName:
+          type:
+            - string
+            - "null"
+          description: Name of the network adapter interface.
+        InterfaceType:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: Type of interface as defined by the IANA Interface Type registry.
+        InterfaceDescription:
+          type:
+            - string
+            - "null"
+          description: |
+            Interface description, also known as ifDesc or display name.
+
+            This is a unique name assigned to the network adapter during installation.
+        InterfaceAlias:
+          type:
+            - string
+            - "null"
+          description: Friendly alias name assigned to the network interface.
+        InterfaceOperationalStatus:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: |
+            Current operational status of the network adapter interface.
+
+            Possible values:
+            - Up (1)
+            - Down (2)
+            - Testing (3)
+            - Unknown (4)
+            - Dormant (5)
+            - NotPresent (6)
+            - LowerLayerDown (7)
+        Virtual:
+          type:
+            - boolean
+            - "null"
+          description: Indicates whether this adapter represents a virtual interface.
+        FullDuplex:
+          type:
+            - boolean
+            - "null"
+          description: Indicates whether the adapter supports full-duplex mode.
+        Hidden:
+          type:
+            - boolean
+            - "null"
+          description: Indicates whether the adapter is hidden from the user interface.
+        Status:
+          type:
+            - string
+            - "null"
+          description: |
+            Current operational status of the network adapter device.
+
+            Possible OPERATIONAL values:
+            - OK
+            - Degraded
+            - Pred Fail
+
+            Possible NON-OPERATIONAL values:
+            - Unknown
+            - Error
+            - Starting
+            - Stopping
+            - Service
+
+            Possible OTHER values:
+            - Stressed
+            - NonRecover
+            - No Contact
+            - Lost Comm
+        LinkLayerAddress:
+          type:
+            - string
+            - "null"
+          description: Physical MAC address of the network adapter.
+        LinkSpeed:
+          type:
+            - string
+            - "null"
+          description: Current link speed as a formatted string.
+        ReceiveLinkSpeed:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: Raw value of the current receive link speed in bits per second.
+        TransmitLinkSpeed:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: Raw value of the current transmit link speed in bits per second.
+        DriverName:
+          type:
+            - string
+            - "null"
+          description: Name of the network adapter driver.
+        DriverVersion:
+          type:
+            - string
+            - "null"
+          description: Version number of the network adapter driver.
+        DriverDate:
+          type:
+            - string
+            - "null"
+          description: Date of the currently installed driver.
+        MtuSize:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: Maximum Transmission Unit (MTU) size of the adapter in bytes.
+        MediaConnectState:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: |
+            Current media connection state of the adapter.
+
+            Possible values:
+            - Unknown (0)
+            - Connected (1)
+            - Disconnected (2)
+        NdisMedium:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: |
+            Network adapter media type.
+
+            Numeric equivalent of mediaType.
+
+            Possible values:
+            - 802.3 (0)
+            - 802.5 (1)
+            - FDDI (2)
+            - WAN (3)
+            - LocalTalk (4)
+            - DIX (5)
+            - Raw Arcnet (6)
+            - 878.2 (7)
+            - ATM (8)
+            - Wireless WAN (9)
+            - IrDA (10)
+            - BPC (11)
+            - Connection Oriented WAN (12)
+            - IP 1394 (13)
+            - InfiniBand (14)
+            - Tunnel (15)
+            - Native 802.11 (16)
+            - Loopback (17)
+            - WiMAX (18)
+            - IP (19)
+        NdisPhysicalMedium:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: |
+            Physical media type supported by the network adapter.
+
+            Numeric equivalent of physicalMediaType.
+
+            Possible values:
+            - Unspecified (0)
+            - Wireless LAN (1)
+            - Cable Modem (2)
+            - Phone Line (3)
+            - Power Line (4)
+            - DSL (5)
+            - Fibre Channel (6)
+            - IEEE 1394 (7)
+            - Wireless WAN (8)
+            - Native 802.11 (9)
+            - Bluetooth (10)
+            - InfiniBand (11)
+            - WiMAX (12)
+            - Ultra-Wideband (13)
+            - 802.3 (14)
+            - 802.5 (15)
+            - IrDA (16)
+            - Wired WAN (17)
+            - Wired Connection Oriented WAN (18)
+            - Other (19)
+        MediaType:
+          type:
+            - string
+            - "null"
+          description: Type of network media currently in use.
+        PhysicalMediaType:
+          type:
+            - string
+            - "null"
+          description: Physical type of network media.
+    MSFT_NetConnectionProfile:
+      description: "[Documentation](https://wutils.com/wmi/root/standardcimv2/msft_netconnectionprofile/)"
+      type: object
+      properties:
+        InterfaceIndex:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: Interface index of the network interface on which the profile
+            is connected.
+        InterfaceAlias:
+          type:
+            - string
+            - "null"
+          description: Name of the network interface on which the profile is connected.
+        NetworkCategory:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: |
+            Network category of the connected profile.
+
+            Possible values:
+            - Public (0)
+            - Private (1)
+            - DomainAuthenticated (2)
+        DomainAuthenticationKind:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: |
+            Indicates the domain authentication kind associated with the profile.
+
+            WARNING: No official Microsoft documentation was found for this field.
+        IPv4Connectivity:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: |
+            IPv4 connectivity status of the connected profile.
+
+            Possible values:
+            - Disconnected (0)
+            - NoTraffic (1)
+            - Subnet (2)
+            - LocalNetwork (3)
+            - Internet (4)
+        IPv6Connectivity:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: |
+            IPv6 connectivity status of the connected profile.
+
+            Possible values:
+            - Disconnected (0)
+            - NoTraffic (1)
+            - Subnet (2)
+            - LocalNetwork (3)
+            - Internet (4)
+    MSFT_NetIPAddress:
+      description: "[Documentation](https://learn.microsoft.com/en-us/windows/win32/fwp/wmi/nettcpipprov/msft-netipaddress)"
+      type: object
+      properties:
+        InterfaceIndex:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: Index of the network interface associated with this IP configuration.
+        InterfaceAlias:
+          type:
+            - string
+            - "null"
+          description: User-friendly name of the network interface.
+        AddressFamily:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: |
+            Address family of the IP address.
+
+            Possible values:
+            - IPv4 (2)
+            - IPv6 (23)
+        IPAddress:
+          type:
+            - string
+            - "null"
+          description: IP address assigned to the interface.
+        IPv4Address:
+          type:
+            - string
+            - "null"
+          description: "IPv4 address assigned to the interface, if applicable."
+        IPv6Address:
+          type:
+            - string
+            - "null"
+          description: "IPv6 address assigned to the interface, if applicable."
+        Type:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Type of IP address.
+
+            Possible values:
+            - Unicast (1)
+            - Anycast (2)
+        PrefixOrigin:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: |
+            Source of the prefix for this IP address.
+
+            Possible values:
+            - Other (0)
+            - Manual (1)
+            - WellKnown (2)
+            - DHCP (3)
+            - RouterAdvertisement (4)
+        SuffixOrigin:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: |
+            Source of the suffix for this IP address.
+
+            Possible values:
+            - Other (0)
+            - Manual (1)
+            - WellKnown (2)
+            - DHCP (3)
+            - Link (4)
+            - Random (5)
+        PrefixLength:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: Length of the network prefix in bits.
+        PreferredLifetime:
+          description: Lifetime during which the address is preferred for use.
+          type:
+            - object
+            - "null"
+          properties:
+            Days:
+              type:
+                - integer
+                - "null"
+              format: int64
+              description: Number of days.
+            Hours:
+              type:
+                - integer
+                - "null"
+              format: int64
+              description: Number of hours.
+            Minutes:
+              type:
+                - integer
+                - "null"
+              format: int64
+              description: Number of minutes.
+            Seconds:
+              type:
+                - integer
+                - "null"
+              format: int64
+              description: Number of seconds.
+        ValidLifetime:
+          description: Total lifetime during which the address is valid.
+          type:
+            - object
+            - "null"
+          properties:
+            Days:
+              type:
+                - integer
+                - "null"
+              format: int64
+              description: Number of days.
+            Hours:
+              type:
+                - integer
+                - "null"
+              format: int64
+              description: Number of hours.
+            Minutes:
+              type:
+                - integer
+                - "null"
+              format: int64
+              description: Number of minutes.
+            Seconds:
+              type:
+                - integer
+                - "null"
+              format: int64
+              description: Number of seconds.
+    Win32_BIOS:
+      description: "[Documentation](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-bios)"
+      type: object
+      properties:
+        Name:
+          type:
+            - string
+            - "null"
+          description: The BIOS name.
+        Caption:
+          type:
+            - string
+            - "null"
+          description: Short description of the BIOS.
+        Manufacturer:
+          type:
+            - string
+            - "null"
+          description: Manufacturer of the BIOS.
+        ReleaseDate:
+          type:
+            - string
+            - "null"
+          description: BIOS release date in UTC format (YYYYMMDDHHMMSS.MMMMMM±OOO).
+        SMBIOSPresent:
+          type:
+            - boolean
+            - "null"
+          description: "If true, the SMBIOS is available on this computer system."
+        Status:
+          type:
+            - string
+            - "null"
+          description: |
+            Current operational status of the BIOS.
+
+            Possible OPERATIONAL values:
+            - OK
+            - Degraded
+            - Pred Fail
+
+            Possible NON-OPERATIONAL values:
+            - Unknown
+            - Error
+            - Starting
+            - Stopping
+            - Service
+
+            Possible OTHER values:
+            - Stressed
+            - NonRecover
+            - No Contact
+            - Lost Comm
+        Version:
+          type:
+            - string
+            - "null"
+          description: Version of the BIOS. This string is created by the BIOS manufacturer.
+        CurrentLanguage:
+          type:
+            - string
+            - "null"
+          description: Name of the current BIOS language.
+        SMBIOSBIOSVersion:
+          type:
+            - string
+            - "null"
+          description: BIOS version as reported by SMBIOS.
+        PrimaryBIOS:
+          type:
+            - boolean
+            - "null"
+          description: "If TRUE, this is the primary BIOS of the computer system."
+    Win32_Baseboard:
+      description: "[Documentation](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-baseboard)"
+      type: object
+      properties:
+        Manufacturer:
+          type:
+            - string
+            - "null"
+          description: Name of the organization responsible for producing the baseboard.
+        Model:
+          type:
+            - string
+            - "null"
+          description: Name by which the baseboard is known.
+        Product:
+          type:
+            - string
+            - "null"
+          description: Baseboard part number defined by the manufacturer.
+        SerialNumber:
+          type:
+            - string
+            - "null"
+          description: Manufacturer-allocated number used to identify the baseboard.
+        Version:
+          type:
+            - string
+            - "null"
+          description: Version of the baseboard.
+    Win32_Battery:
+      description: "[Documentation](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-battery)"
+      type: object
+      properties:
+        DeviceID:
+          type:
+            - string
+            - "null"
+          description: Identifier of the battery.
+        Caption:
+          type:
+            - string
+            - "null"
+          description: "Short, one-line description of the battery object."
+        Description:
+          type:
+            - string
+            - "null"
+          description: Description of the battery.
+        Name:
+          type:
+            - string
+            - "null"
+          description: Label by which the battery is known.
+        Status:
+          type:
+            - string
+            - "null"
+          description: |
+            Current operational status of the battery device.
+
+            Possible OPERATIONAL values:
+            - OK
+            - Degraded
+            - Pred Fail
+
+            Possible NON-OPERATIONAL values:
+            - Unknown
+            - Error
+            - Starting
+            - Stopping
+            - Service
+
+            Possible OTHER values:
+            - Stressed
+            - NonRecover
+            - No Contact
+            - Lost Comm
+        PowerManagementCapabilities:
+          type:
+            - array
+            - "null"
+          items:
+            type: integer
+            format: int32
+          description: |
+            Array of specific power-related capabilities supported by the battery.
+
+            Possible values:
+            - 0 - Unknown
+            - 1 - Not Supported
+            - 2 - Disabled
+            - 3 - Enabled
+            - 4 - Power Saving Modes Entered Automatically
+            - 5 - Power State Settable
+            - 6 - Power Cycling Supported
+            - 7 - Timed Power On Supported
+        PowerManagementSupported:
+          type:
+            - boolean
+            - "null"
+          description: Indicates whether the battery can be power-managed.
+        BatteryStatus:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Status of the battery.
+
+            Possible values:
+            - 1 - Discharging
+            - 2 - AC present, not charging
+            - 3 - Fully Charged
+            - 4 - Low
+            - 5 - Critical
+            - 6 - Charging
+            - 7 - Charging and High
+            - 8 - Charging and Low
+            - 9 - Charging and Critical
+            - 10 - Undefined
+            - 11 - Partially Charged
+        Chemistry:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Type of battery chemistry.
+
+            Possible values:
+            - 1 - Other
+            - 2 - Unknown
+            - 3 - Lead Acid
+            - 4 - Nickel Cadmium
+            - 5 - Nickel Metal Hydride
+            - 6 - Lithium-ion
+            - 7 - Zinc Air
+            - 8 - Lithium Polymer
+        DesignCapacity:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: Design capacity of the battery in milliwatt-hours.
+        DesignVoltage:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: Design voltage of the battery in millivolts.
+        EstimatedChargeRemaining:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: Estimated percentage of full charge remaining.
+        EstimatedRunTime:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: Estimated remaining runtime of the battery in minutes.
+    Win32_CacheMemory:
+      description: "[Documentation](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-cachememory)"
+      type: object
+      properties:
+        DeviceID:
+          type:
+            - string
+            - "null"
+          description: |
+            Unique identifier of the cache instance.
+        Purpose:
+          type:
+            - string
+            - "null"
+          description: |
+            Free-form description of the cache purpose or level designation.
+        CacheType:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Type of cache.
+
+            Possible values:
+            - 1 – Other
+            - 2 – Unknown
+            - 3 – Instruction
+            - 4 – Data
+            - 5 – Unified
+        Level:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Cache hierarchy level.
+
+            Possible values:
+            - 1 – Other
+            - 2 – Unknown
+            - 3 – Primary (L1)
+            - 4 – Secondary (L2)
+            - 5 – Tertiary (L3)
+            - 6 – Not Applicable
+        InstalledSize:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: |
+            Installed cache size in kilobytes.
+        Associativity:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Cache associativity.
+
+            Possible values:
+            - 1 – Other
+            - 2 – Unknown
+            - 3 – Direct Mapped
+            - 4 – 2-way Set-Associative
+            - 5 – 4-way Set-Associative
+            - 6 – Fully Associative
+            - 7 – 8-way Set-Associative
+            - 8 – 16-way Set-Associative
+        Location:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Physical cache location relative to the processor.
+
+            Possible values:
+            - 0 – Internal
+            - 1 – External
+            - 2 – Reserved
+            - 3 – Unknown
+        ErrorCorrectType:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Error-correction method used by the cache.
+
+            Possible values:
+            - 0 – Reserved
+            - 1 – Other
+            - 2 – Unknown
+            - 3 – None
+            - 4 – Parity
+            - 5 – Single-bit ECC
+            - 6 – Multi-bit ECC
+        Availability:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Current availability and operational state.
+
+            Possible values:
+            - 1 – Other
+            - 2 – Unknown
+            - 3 – Running/Full Power
+            - 4 – Warning
+            - 5 – In Test
+            - 6 – Not Applicable
+            - 7 – Power Off
+            - 8 – Offline
+            - 9 – Off-duty
+            - 10 – Degraded
+            - 11 – Not Installed
+            - 12 – Install Error
+            - 13 – Power Save - Unknown
+            - 14 – Power Save - Low Power Mode
+            - 15 – Power Save - Standby
+            - 16 – Power Cycle
+            - 17 – Power Save - Warning
+            - 18 – Paused
+            - 19 – Not Ready
+            - 20 – Not Configured
+            - 21 – Quiesced
+        Status:
+          type:
+            - string
+            - "null"
+          description: |
+            Current operational status of the cache device.
+
+            Possible OPERATIONAL values:
+            - OK
+            - Degraded
+            - Pred Fail
+
+            Possible NON-OPERATIONAL values:
+            - Unknown
+            - Error
+            - Starting
+            - Stopping
+            - Service
+
+            Possible OTHER values:
+            - Stressed
+            - NonRecover
+            - No Contact
+            - Lost Comm
+        StatusInfo:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Logical state of the device.
+
+            Possible values:
+            - 1 – Other
+            - 2 – Unknown
+            - 3 – Enabled
+            - 4 – Disabled
+            - 5 – Not Applicable
+    Win32_ComputerSystem:
+      description: "[Documentation](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-computersystem)"
+      type: object
+      properties:
+        AdminPasswordStatus:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            System hardware security settings for administrator password status.
+
+            Possible values:
+            - 0 — Disabled
+            - 1 — Enabled
+            - 2 — Not Implemented
+            - 3 — Unknown
+        KeyboardPasswordStatus:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            System hardware security settings for keyboard password status.
+
+            Possible values:
+            - 0 — Disabled
+            - 1 — Enabled
+            - 2 — Not Implemented
+            - 3 — Unknown
+        PowerOnPasswordStatus:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            System hardware security settings for power-on password status.
+
+            Possible values:
+            - 0 — Disabled
+            - 1 — Enabled
+            - 2 — Not Implemented
+            - 3 — Unknown
+        BootupState:
+          type:
+            - string
+            - "null"
+          description: |
+            System start type.
+
+            Possible values:
+            - "Normal boot" — Normal boot
+            - "Fail-safe boot" — Safe mode (no network)
+            - "Fail-safe with network boot" — Safe mode with networking
+        BootStatus:
+          type:
+            - array
+            - "null"
+          items:
+            type: integer
+            format: int32
+          description: |
+            Status and additional data fields that identify the boot status.
+            This value comes from the Boot Status member of the System Boot Information structure in the SMBIOS information.
+
+            Note: BootStatus is platform/firmware dependent and is not supported before Windows 10 and Windows Server 2016
+        AutomaticResetBootOption:
+          type:
+            - boolean
+            - "null"
+          description: "If true, the automatic reset boot option is enabled."
+        PowerState:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Current power state of the computer system.
+
+            Possible values:
+            - 0 — Unknown
+            - 1 — Full Power
+            - 2 — Power Save - Low Power Mode
+            - 3 — Power Save - Standby
+            - 4 — Power Save - Unknown
+            - 5 — Power Cycle
+            - 6 — Power Off
+            - 7 — Power Save - Warning
+            - 8 — Power Save - Hibernate
+            - 9 — Power Save - Soft Off
+        PowerSupplyState:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            State of the power supply or supplies when last booted.
+
+            Possible values:
+            - 1 — Other
+            - 2 — Unknown
+            - 3 — Safe
+            - 4 — Warning
+            - 5 — Critical
+            - 6 — Non-recoverable
+        PowerManagementCapabilities:
+          type:
+            - array
+            - "null"
+          items:
+            type: integer
+            format: int32
+          description: |
+            Array of specific power-related capabilities.
+
+            Possible values:
+            - 0 — Unknown
+            - 1 — Not Supported
+            - 2 — Disabled
+            - 3 — Enabled
+            - 4 — Power Saving Modes Entered Automatically
+            - 5 — Power State Settable
+            - 6 — Power Cycling Supported
+            - 7 — Timed Power On Supported
+        PowerManagementSupported:
+          type:
+            - boolean
+            - "null"
+          description: "If true, the device can be power-managed."
+        ResetCapability:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            If enabled, indicates the unitary computer system can be reset using power and reset buttons.
+
+            Typical values:
+            - 1 — Other
+            - 2 — Unknown
+            - 3 — Disabled
+            - 4 — Enabled
+            - 5 — Not Implemented
+        ResetCount:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Number of automatic resets since the last reset.
+            A value of -1 indicates the count is unknown.
+        ResetLimit:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Number of consecutive times a system reset is attempted.
+            A value of -1 indicates the limit is unknown.
+        FrontPanelResetStatus:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Hardware security setting for the front-panel reset button.
+
+            Typical values:
+            - 0 — Disabled
+            - 1 — Enabled
+            - 2 — Not Implemented
+            - 3 — Unknown
+        AutomaticResetCapability:
+          type:
+            - boolean
+            - "null"
+          description: "If true, automatic reset capability is available."
+        Name:
+          type:
+            - string
+            - "null"
+          description: Key of a CIM_System instance. Name of the computer system.
+        Caption:
+          type:
+            - string
+            - "null"
+          description: Short one-line description of the object.
+        Description:
+          type:
+            - string
+            - "null"
+          description: Longer description of the object.
+        Manufacturer:
+          type:
+            - string
+            - "null"
+          description: Name of the computer manufacturer.
+        Model:
+          type:
+            - string
+            - "null"
+          description: Product name assigned by the manufacturer.
+        PrimaryOwnerName:
+          type:
+            - string
+            - "null"
+          description: Name of the primary owner.
+        PrimaryOwnerContact:
+          type:
+            - string
+            - "null"
+          description: Contact information for the primary owner.
+        Roles:
+          type:
+            - array
+            - "null"
+          items:
+            type: string
+          description: List of roles the system performs in the environment (editable).
+        ChassisSKUNumber:
+          type:
+            - string
+            - "null"
+          description: Chassis or enclosure SKU number (from SMBIOS).
+        SystemSKUNumber:
+          type:
+            - string
+            - "null"
+          description: SKU/Product ID for the system configuration.
+        SystemFamily:
+          type:
+            - string
+            - "null"
+          description: Family of the computer (SMBIOS Family field). May be unsupported
+            on older OS versions.
+        SystemType:
+          type:
+            - string
+            - "null"
+          description: |
+            System architecture description
+
+            Possible values:
+            - "x64-based PC"
+            - "X86-based PC"
+            - "MIPS-based PC"
+            - "Alpha-based PC"
+            - "Power PC"
+            - "SH-x PC"
+            - "StrongARM PC"
+            - "64-bit Intel PC"
+            - "64-bit Alpha PC"
+            - "Unknown"
+            - "X86-Nec98 PC"
+        UserName:
+          type:
+            - string
+            - "null"
+          description: "Currently logged-on user. In Terminal Services scenarios,\
+            \ this is the console user."
+        Workgroup:
+          type:
+            - string
+            - "null"
+          description: Name of the workgroup or domain (if PartOfDomain==false this
+            is a workgroup name).
+        OEMStringArray:
+          type:
+            - array
+            - "null"
+          items:
+            type: string
+          description: OEM-defined strings.
+        NumberOfProcessors:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: Number of physical processors installed (enabled).
+        NumberOfLogicalProcessors:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: Number of logical processors available (includes hyperthreading
+            logical CPUs).
+        TotalPhysicalMemory:
+          description: |
+            Total size of physical memory in bytes.
+            Note: under some circumstances this may not be accurate (BIOS reservation). For accurate module-by-module capacity,
+            query the equivalent method(s) in Win32_PhysicalMemory
+          type:
+            - number
+            - "null"
+        AutomaticManagedPagefile:
+          type:
+            - boolean
+            - "null"
+          description: "If true, the system manages the page file automatically."
+        InfraredSupported:
+          type:
+            - boolean
+            - "null"
+          description: "If true, an infrared (IR) port exists on the computer system."
+        NetworkServerModeEnabled:
+          type:
+            - boolean
+            - "null"
+          description: "If true, network server mode is enabled (system behaves as\
+            \ a server)."
+        HypervisorPresent:
+          type:
+            - boolean
+            - "null"
+          description: |
+            If true, a hypervisor is present on the system.
+            Note: not supported before Windows 8 / Windows Server 2012 on older OSes.
+        ThermalState:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Thermal state of the system when last booted.
+
+            Possible values:
+            - 1 — Other
+            - 2 — Unknown
+            - 3 — Safe
+            - 4 — Warning
+            - 5 — Critical
+            - 6 — Non-recoverable
+        CurrentTimeZone:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Amount of time the system is offset from UTC, in minutes.
+            Example: for UTC+5:30 (Asia/Kolkata) the value is 330.
+        DaylightInEffect:
+          type:
+            - boolean
+            - "null"
+          description: "If True, the daylight savings mode is ON."
+    Win32_DesktopMonitor:
+      description: "[Documentation](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-desktopmonitor)"
+      type: object
+      properties:
+        DeviceID:
+          type:
+            - string
+            - "null"
+          description: Unique identifier of the desktop monitor on the system.
+        Name:
+          type:
+            - string
+            - "null"
+          description: Label by which the object is known.
+        PNPDeviceID:
+          type:
+            - string
+            - "null"
+          description: Windows Plug and Play device identifier of the monitor.
+        Status:
+          type:
+            - string
+            - "null"
+          description: |
+            Current operational status of the monitor device.
+
+            Possible OPERATIONAL values:
+            - OK
+            - Degraded
+            - Pred Fail
+
+            Possible NON-OPERATIONAL values:
+            - Unknown
+            - Error
+            - Starting
+            - Stopping
+            - Service
+
+            Possible OTHER values:
+            - Stressed
+            - NonRecover
+            - No Contact
+            - Lost Comm
+        MonitorManufacturer:
+          type:
+            - string
+            - "null"
+          description: Name of the manufacturer of the monitor.
+        MonitorType:
+          type:
+            - string
+            - "null"
+          description: Type of monitor.
+        PixelsPerXLogicalInch:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: Resolution along the x-axis (horizontal direction) of the monitor.
+        PixelsPerYLogicalInch:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: Resolution along the y-axis (vertical direction) of the monitor.
+    Win32_DiskDrive:
+      description: "[Documentation](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-diskdrive)"
+      type: object
+      properties:
+        DeviceID:
+          type:
+            - string
+            - "null"
+          description: Unique identifier of the disk drive with other devices on the
+            system.
+        Caption:
+          type:
+            - string
+            - "null"
+          description: Short description of the object.
+        Model:
+          type:
+            - string
+            - "null"
+          description: Manufacturer’s model number of the disk drive.
+        Size:
+          type:
+            - integer
+            - "null"
+          description: |
+            Size of the disk drive, calculated by multiplying the total number
+            of cylinders, tracks in each cylinder, sectors in each track,
+            and bytes in each sector.
+        FirmwareRevision:
+          type:
+            - string
+            - "null"
+          description: Revision of the disk drive firmware assigned by the manufacturer.
+        SerialNumber:
+          type:
+            - string
+            - "null"
+          description: Number allocated by the manufacturer to identify the physical
+            media.
+        Partitions:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: Number of partitions on this physical disk drive recognized
+            by the operating system.
+        Status:
+          type:
+            - string
+            - "null"
+          description: |
+            Current operational status of the physical disk.
+
+            Possible OPERATIONAL values:
+            - OK
+            - Degraded
+            - Pred Fail
+
+            Possible NON-OPERATIONAL values:
+            - Unknown
+            - Error
+            - Starting
+            - Stopping
+            - Service
+
+            Possible OTHER values:
+            - Stressed
+            - NonRecover
+            - No Contact
+            - Lost Comm
+        InterfaceType:
+          type:
+            - string
+            - "null"
+          description: "Interface type of the physical disk drive (e.g., SCSI, IDE,\
+            \ USB, NVMe)."
+        PNPDeviceID:
+          type:
+            - string
+            - "null"
+          description: Windows Plug and Play device identifier of the logical device.
+        Capabilities:
+          type:
+            - array
+            - "null"
+          items:
+            type: integer
+            format: int32
+          description: |
+            Array of capabilities of the media access device.
+
+            Possible Values:
+            - 1 - Other
+            - 2 - Sequential Access
+            - 3 - Random Access
+            - 4 - Supports Writing
+            - 5 - Encryption
+            - 6 - Compression
+            - 7 - Supports Removable Media
+            - 8 - Manual Cleaning
+            - 9 - Automatic Cleaning
+            - 10 - S.M.A.R.T Notification
+            - 11 - Supports Dual Sided Media
+            - 12 - Pre-dismount Eject Not Required
+        CapabilityDescriptions:
+          type:
+            - array
+            - "null"
+          items:
+            type: string
+          description: |
+            List of more detailed explanations for any of the access device
+            features indicated in the capabilities array.
+
+            Each entry of this array is related to the entry in the
+            capabilities array located at the same index.
+    Win32_DiskPartition:
+      description: "[Documentation](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-diskpartition)"
+      type: object
+      properties:
+        DeviceID:
+          type:
+            - string
+            - "null"
+          description: Unique identifier of the disk drive and partition within the
+            system.
+        Name:
+          type:
+            - string
+            - "null"
+          description: Label by which the partition is known.
+        Description:
+          type:
+            - string
+            - "null"
+          description: Description of the partition object.
+        BlockSize:
+          type:
+            - integer
+            - "null"
+          description: Size in bytes of the blocks that form this partition.
+        NumberOfBlocks:
+          type:
+            - integer
+            - "null"
+          description: |
+            Total number of consecutive blocks that form this partition.
+
+            The total size of the partition can be calculated by
+            multiplying this value by blockSize.
+        Bootable:
+          type:
+            - boolean
+            - "null"
+          description: Indicates whether the computer can be booted from this partition.
+        PrimaryPartition:
+          type:
+            - boolean
+            - "null"
+          description: Indicates whether this is the primary partition on the disk.
+        BootPartition:
+          type:
+            - boolean
+            - "null"
+          description: |
+            Indicates whether this is the active (boot) partition
+            used by the operating system when booting.
+        DiskIndex:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: Index number of the physical disk that contains this partition.
+        Size:
+          type:
+            - integer
+            - "null"
+          description: Total size of the partition in bytes.
+        Type:
+          type:
+            - string
+            - "null"
+          description: |
+            Type of the partition.
+
+            Possible Values (Non-exhaustive, will be updated when new values are found):
+            - Unused
+            - 12-bit FAT
+            - Xenix Type 1
+            - Xenix Type 2
+            - 16-bit FAT
+            - Extended Partition
+            - MS-DOS V4 Huge
+            - Installable File System
+            - PowerPC Reference Platform
+            - UNIX
+            - NTFS
+            - ReFS
+            - Win95 w/Extended Int 13
+            - Extended w/Extended Int 13
+            - Logical Disk Manager
+            - Unknown
+    Win32_Environment:
+      description: "[Documentation](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-environment)"
+      type: object
+      properties:
+        Name:
+          type:
+            - string
+            - "null"
+          description: Character string that specifies the name of a Windows-based
+            environment variable.
+        SystemVariable:
+          type:
+            - boolean
+            - "null"
+          description: Indicates whether the variable is a system variable.
+        VariableValue:
+          type:
+            - string
+            - "null"
+          description: |
+            Placeholder variable of a Windows-based environment variable.
+            Information such as file system directories can change from computer to computer.
+            The operating system substitutes placeholders for these values.
+    Win32_LogicalDisk:
+      description: "[Documentation](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-logicaldisk)"
+      type: object
+      properties:
+        DeviceID:
+          type:
+            - string
+            - "null"
+          description: |
+            Unique identifier of the logical disk from other devices on the system.
+            Appears as the drive letter assigned to the partition in the physical disk
+            Example: "C:"
+        Description:
+          type:
+            - string
+            - "null"
+          description: Description of the logical disk object.
+        DriveType:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: |
+            Numeric value that corresponds to the type of disk drive this logical disk represents.
+
+            Possible values:
+            - 0 – Unknown
+            - 1 – No Root Directory
+            - 2 – Removable Disk
+            - 3 – Local Disk
+            - 4 – Network Drive
+            - 5 – Compact Disc
+            - 6 – RAM Disk
+
+            Data type: uint32
+        MediaType:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: |
+            Type of media currently present in the logical drive.
+            Value corresponds to a member of the MEDIA_TYPE enumeration defined in Winioctl.h.
+            Visit the microsoft documentation stated at the class level to know about the possible values.
+        FileSystem:
+          type:
+            - string
+            - "null"
+          description: |
+            File system on the logical disk.
+            Example: "NTFS", "FAT32", "ReFS"
+        Size:
+          description: Size of the disk drive in bytes.
+          type:
+            - number
+            - "null"
+        FreeSpace:
+          description: "Free space, in bytes, available on the logical disk."
+          type:
+            - number
+            - "null"
+        Compressed:
+          type:
+            - boolean
+            - "null"
+          description: |
+            Indicates if the logical volume exists as a single compressed entity (e.g., DoubleSpace).
+            If file-based compression is supported (e.g., NTFS), this value is false.
+        SupportsFileBasedCompression:
+          type:
+            - boolean
+            - "null"
+          description: "Indicates whether the logical disk supports file-based compression\
+            \ (e.g., NTFS)."
+        SupportsDiskQuotas:
+          type:
+            - boolean
+            - "null"
+          description: Indicates whether this volume supports disk quotas.
+        VolumeName:
+          type:
+            - string
+            - "null"
+          description: |
+            Volume name of the logical disk.
+            Example: "Local Disk"
+        VolumeSerialNumber:
+          type:
+            - string
+            - "null"
+          description: Volume serial number of the logical disk.
+    Win32_OperatingSystem:
+      description: "[Documentation](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-operatingsystem)"
+      type: object
+      properties:
+        Name:
+          type:
+            - string
+            - "null"
+          description: Name of the operating system.
+        Caption:
+          type:
+            - string
+            - "null"
+          description: Short textual description (friendly name) of the operating
+            system.
+        InstallDate:
+          type:
+            - string
+            - "null"
+          description: Date and time when the operating system was installed.
+        CSName:
+          type:
+            - string
+            - "null"
+          description: Name of the computer system running the operating system.
+        LastBootUpTime:
+          type:
+            - string
+            - "null"
+          description: Date and time when the computer was last booted.
+        LocalDateTime:
+          type:
+            - string
+            - "null"
+          description: Current local date and time of the operating system.
+        Distributed:
+          type:
+            - boolean
+            - "null"
+          description: Indicates whether this operating system is part of a distributed
+            system.
+        NumberOfUsers:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: Number of user sessions currently active.
+        Version:
+          type:
+            - string
+            - "null"
+          description: |
+            Version number of the operating system.
+            Example: "10.0.22621"
+        BootDevice:
+          type:
+            - string
+            - "null"
+          description: Path to the boot device that the operating system uses to start
+            the computer.
+        BuildNumber:
+          type:
+            - string
+            - "null"
+          description: Internal build number of the operating system.
+        BuildType:
+          type:
+            - string
+            - "null"
+          description: |
+            Type of build of the operating system.
+            Example: "Multiprocessor Free", "Checked"
+        Manufacturer:
+          type:
+            - string
+            - "null"
+          description: |
+            Manufacturer of the operating system.
+            Typically: "Microsoft Corporation"
+        OSArchitecture:
+          type:
+            - string
+            - "null"
+          description: |
+            Architecture of the operating system.
+            Example: "32-bit", "64-bit"
+        MUILanguages:
+          type:
+            - array
+            - "null"
+          items:
+            type: string
+          description: |
+            List of installed user interface languages (MUI language codes).
+            Example: ["en-US", "fr-FR"]
+        PortableOperatingSystem:
+          type:
+            - boolean
+            - "null"
+          description: |
+            Indicates whether the operating system is installed on a portable device.
+
+            Possible values:
+            - true – Installed on a portable device (e.g., Windows To Go)
+            - false – Installed on a fixed computer
+        Primary:
+          type:
+            - boolean
+            - "null"
+          description: Indicates whether this is the primary operating system on the
+            computer.
+        RegisteredUser:
+          type:
+            - string
+            - "null"
+          description: Name of the registered user of the operating system.
+        SerialNumber:
+          type:
+            - string
+            - "null"
+          description: Operating system serial number or product key identifier.
+        ServicePackMajorVersion:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: Major version number of the most recent service pack installed.
+        ServicePackMinorVersion:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: Minor version number of the most recent service pack installed.
+        SystemDirectory:
+          type:
+            - string
+            - "null"
+          description: |
+            Full path to the system directory.
+            Example: "C:\WINDOWS\system32"
+        SystemDrive:
+          type:
+            - string
+            - "null"
+          description: |
+            Drive letter where the operating system is installed.
+            Example: "C:"
+        WindowsDirectory:
+          type:
+            - string
+            - "null"
+          description: |
+            Full path to the Windows installation directory.
+            Example: "C:\WINDOWS"
+    Win32_PhysicalMemory:
+      description: "[Documentation](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-physicalmemory)"
+      type: object
+      properties:
+        Tag:
+          type:
+            - string
+            - "null"
+          description: Unique identifier for the physical memory device represented
+            by an instance of this class.
+        Name:
+          type:
+            - string
+            - "null"
+          description: Label for the physical memory.
+        Manufacturer:
+          type:
+            - string
+            - "null"
+          description: Name of the organization responsible for producing the physical
+            memory.
+        Model:
+          type:
+            - string
+            - "null"
+          description: Model name for the physical element.
+        OtherIdentifyingInfo:
+          type:
+            - string
+            - "null"
+          description: |
+            Additional data, beyond asset tag information, that can be used to identify
+            a physical element.
+
+            For example, bar code data associated with an element that also has an asset tag.
+        PartNumber:
+          type:
+            - string
+            - "null"
+          description: |
+            Part number assigned by the organization responsible for producing
+            or manufacturing the physical element.
+        FormFactor:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Implementation form factor for the chip.
+
+            Possible values:
+            - 0 - Unknown
+            - 1 - Other
+            - 2 - SIP
+            - 3 - DIP
+            - 4 - ZIP
+            - 5 - SOJ
+            - 6 - Proprietary
+            - 7 - SIMM
+            - 8 - DIMM
+            - 9 - TSOP
+            - 10 - PGA
+            - 11 - RIMM
+            - 12 - SODIMM
+            - 13 - SRIMM
+            - 14 - SMD
+            - 15 - SSMP
+            - 16 - QFP
+            - 17 - TQFP
+            - 18 - SOIC
+            - 19 - LCC
+            - 20 - PLCC
+            - 21 - BGA
+            - 22 - FPBGA
+            - 23 - LGA
+        BankLabel:
+          type:
+            - string
+            - "null"
+          description: Physically labeled bank where the memory is located.
+        Capacity:
+          description: Total capacity of the physical memory in bytes.
+          format: int64
+          type:
+            - string
+            - "null"
+        DataWidth:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Data width of the physical memory in bits.
+
+            A data width of 0 (zero) and a total width of 8 (eight)
+            indicates that the memory is used solely to provide error correction bits.
+        Speed:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: Speed of the physical memory in MHz.
+        ConfiguredClockSpeed:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: |
+            The configured clock speed of the memory device, in MHz,
+            or 0 if the speed is unknown.
+        DeviceLocator:
+          type:
+            - string
+            - "null"
+          description: Label of the socket or circuit board that holds the memory.
+        SerialNumber:
+          type:
+            - string
+            - "null"
+          description: Manufacturer-allocated number to identify the physical element.
+    Win32_PnPEntity:
+      description: "[Documentation](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-pnpentity)"
+      type: object
+      properties:
+        DeviceID:
+          type:
+            - string
+            - "null"
+          description: Identifier of the Plug and Play device.
+        PNPDeviceID:
+          type:
+            - string
+            - "null"
+          description: Windows Plug and Play device identifier of the logical device.
+        HardwareID:
+          type:
+            - array
+            - "null"
+          items:
+            type: string
+          description: |
+            Vendor-defined list of hardware identification strings used by Windows Setup
+            to match the device to an INF file.
+        CompatibleID:
+          type:
+            - array
+            - "null"
+          items:
+            type: string
+          description: |
+            Vendor-defined list of compatible identification strings used by Windows Setup
+            as fallback identifiers when no matching hardware ID is found.
+        Name:
+          type:
+            - string
+            - "null"
+          description: The name by which the device is known.
+        Description:
+          type:
+            - string
+            - "null"
+          description: Human-readable description of the device.
+        Manufacturer:
+          type:
+            - string
+            - "null"
+          description: Name of the manufacturer of the Plug and Play device.
+        Present:
+          type:
+            - boolean
+            - "null"
+          description: |
+            Indicates whether this Plug and Play device is currently present in the system.
+
+            Note:
+            This property is not supported on:
+            - Windows Server 2012 R2
+            - Windows 8.1
+            - Windows Server 2012
+            - Windows 8
+            - Windows Server 2008 R2
+            - Windows 7
+            - Windows Server 2008
+            - Windows Vista
+        Status:
+          type:
+            - string
+            - "null"
+          description: |
+            Current operational status of the Plug and Play device.
+
+            Possible OPERATIONAL values:
+            - "OK"
+            - "Degraded"
+            - "Pred Fail"
+
+            Possible NON-OPERATIONAL values:
+            - "Unknown"
+            - "Error"
+            - "Starting"
+            - "Stopping"
+            - "Service"
+
+            Possible OTHER values:
+            - "Stressed"
+            - "NonRecover"
+            - "No Contact"
+            - "Lost Comm"
+    Win32_PortConnector:
+      description: "[Documentation](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-portconnector)"
+      type: object
+      properties:
+        Tag:
+          type:
+            - string
+            - "null"
+          description: |
+            Unique identifier of a port connection on the computer system.
+        ExternalReferenceDesignator:
+          type:
+            - string
+            - "null"
+          description: |
+            External reference designator of the port.
+
+            External reference designators are identifiers that determine
+            the type and use of the port.
+        InternalReferenceDesignator:
+          type:
+            - string
+            - "null"
+          description: |
+            Internal reference designator of the port.
+
+            Internal reference designators are specific to the manufacturer,
+            and identify the circuit board location or use of the port.
+        PortType:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Function of the port.
+
+            Possible values include:
+            - None (0)
+            - Parallel Port XT/AT Compatible (1)
+            - Parallel Port PS/2 (2)
+            - Parallel Port ECP (3)
+            - Parallel Port EPP (4)
+            - Parallel Port ECP/EPP (5)
+            - Serial Port XT/AT Compatible (6)
+            - Serial Port 16450 Compatible (7)
+            - Serial Port 16550 Compatible (8)
+            - Serial Port 16550A Compatible (9)
+            - SCSI Port (10)
+            - MIDI Port (11)
+            - Joy Stick Port (12)
+            - Keyboard Port (13)
+            - Mouse Port (14)
+            - SSA SCSI (15)
+            - USB (16)
+            - FireWire (IEEE P1394) (17)
+            - PCMCIA Type I (18)
+            - PCMCIA Type II (19)
+            - PCMCIA Type III (20)
+            - Cardbus (21)
+            - Access Bus Port (22)
+            - SCSI II (23)
+            - SCSI Wide (24)
+            - PC-98 (25)
+            - PC-98-Hireso (26)
+            - PC-H98 (27)
+            - Video Port (28)
+            - Audio Port (29)
+            - Modem Port (30)
+            - Network Port (31)
+            - 8251 Compatible (32)
+            - 8251 FIFO Compatible (33)
+        ConnectorType:
+          type:
+            - array
+            - "null"
+          items:
+            type: integer
+            format: int32
+          description: |
+            Array of physical attributes of the connector used by this port.
+
+            Refer to the Microsoft documentation provided at the class level
+            for a list of possible values.
+    Win32_Printer:
+      description: "[Documentation](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-printer)"
+      type: object
+      properties:
+        DeviceID:
+          type:
+            - string
+            - "null"
+          description: System-assigned unique identifier of the printer.
+        Name:
+          type:
+            - string
+            - "null"
+          description: Name of the printer as recognized by the system.
+        PNPDeviceID:
+          type:
+            - string
+            - "null"
+          description: Windows Plug and Play device identifier.
+        Capabilities:
+          type:
+            - array
+            - "null"
+          items:
+            type: integer
+            format: int32
+          description: |
+            List of capability codes supported by the printer.
+
+            Possible values:
+            - 1 - Other
+            - 2 - Color printing
+            - 3 - Duplex printing
+            - 4 - Copies
+            - 5 - Collation
+            - 6 - Stapling
+            - 7 - Transparency printing
+            - 8 - Punch
+            - 9 - Cover
+            - 10 - Bind
+            - 11 - Black-and-white printing
+            - 12 - One-sided
+            - 13 - Two-sided long edge
+            - 14 - Two-sided short edge
+            - 15 - Portrait
+            - 16 - Landscape
+            - 17 - Reverse Portrait
+            - 18 - Reverse Landscape
+            - 19 - Quality High
+            - 20 - Quality Normal
+            - 21 - Quality Low
+        CapabilityDescriptions:
+          type:
+            - array
+            - "null"
+          items:
+            type: string
+          description: Descriptive text corresponding to capabilities.
+        HorizontalResolution:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: Printer horizontal resolution in DPI (dots per inch).
+        VerticalResolution:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: Printer vertical resolution in DPI (dots per inch).
+        PaperSizesSupported:
+          type:
+            - array
+            - "null"
+          items:
+            type: integer
+            format: int32
+          description: |
+            Numeric codes of paper sizes supported by the printer.
+
+            Refer to the Microsoft documentation for the exhaustive list of supported values.
+        PrinterPaperNames:
+          type:
+            - array
+            - "null"
+          items:
+            type: string
+          description: Names of paper types or forms supported by the printer.
+        PrinterStatus:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Current operational state of the printer.
+
+            Possible values:
+            - 1 - Other
+            - 2 - Unknown
+            - 3 - Idle
+            - 4 - Printing
+            - 5 - Warm-up
+            - 6 - Stopped printing
+            - 7 - Offline
+        PrintJobDataType:
+          type:
+            - string
+            - "null"
+          description: |
+            Data type of print jobs.
+
+            Example: RAW or EMF
+        PrintProcessor:
+          type:
+            - string
+            - "null"
+          description: |
+            Print processor used to process print jobs.
+
+            Example: WinPrint
+        DriverName:
+          type:
+            - string
+            - "null"
+          description: Name of the printer driver installed.
+        Shared:
+          type:
+            - boolean
+            - "null"
+          description: Indicates whether the printer is shared on the network.
+        ShareName:
+          type:
+            - string
+            - "null"
+          description: Share name of the printer if it is shared.
+        SpoolEnabled:
+          type:
+            - boolean
+            - "null"
+          description: Indicates whether spooling is enabled for the printer.
+        Hidden:
+          type:
+            - boolean
+            - "null"
+          description: Specifies whether the printer is hidden from standard user
+            interfaces.
+    Win32_Process:
+      description: "[Documentation](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-process)"
+      type: object
+      properties:
+        ProcessId:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: Unique identifier of the process.
+        SessionId:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: Identifier of the session under which this process is running.
+        Name:
+          type:
+            - string
+            - "null"
+          description: Name of the executable file responsible for this process.
+        Caption:
+          type:
+            - string
+            - "null"
+          description: Short one-line description of the process.
+        Description:
+          type:
+            - string
+            - "null"
+          description: Full description of the process.
+        ExecutablePath:
+          type:
+            - string
+            - "null"
+          description: Full path to the executable file of the process.
+        ExecutionState:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Current execution state of the process.
+
+            Possible values:
+            - 0 — Unknown
+            - 1 — Other
+            - 2 — Ready
+            - 3 — Running
+            - 4 — Blocked
+            - 5 — Suspended Blocked
+            - 6 — Suspended Ready
+            - 7 — Terminated
+            - 8 — Stopped
+            - 9 — Growing
+        Handle:
+          type:
+            - string
+            - "null"
+          description: Handle of the process (string representation of ProcessId).
+        HandleCount:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: Number of handles currently open by the process.
+        Priority:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: |
+            Scheduling priority of the process.
+
+            Possible values:
+            - 0 (lowest) to 31 (highest)
+        ThreadCount:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: Number of active threads in the process.
+        KernelModeTime:
+          description: "Time spent by the process in kernel mode, in milliseconds."
+          type:
+            - number
+            - "null"
+        UserModeTime:
+          description: "Time spent by the process in user mode, in milliseconds."
+          type:
+            - number
+            - "null"
+        WorkingSetSize:
+          description: "Current working set size used by the process, in bytes."
+          type:
+            - number
+            - "null"
+        PeakWorkingSetSize:
+          description: "Peak working set size of the process, in kilobytes."
+          type:
+            - number
+            - "null"
+        PrivatePageCount:
+          description: Current number of private memory pages used by the process.
+          type:
+            - number
+            - "null"
+        PageFileUsage:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: "Current amount of page file usage, in kilobytes."
+        PeakPageFileUsage:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: "Peak page file usage, in kilobytes."
+        VirtualSize:
+          description: "Current virtual address space used by the process, in bytes."
+          type:
+            - number
+            - "null"
+        PeakVirtualSize:
+          description: "Peak virtual address space used by the process, in bytes."
+          type:
+            - number
+            - "null"
+        CreationDate:
+          type:
+            - string
+            - "null"
+          description: Date and time when the process was created.
+        TerminationDate:
+          type:
+            - string
+            - "null"
+          description: "Date and time when the process was terminated, if available."
+    Win32_Processor:
+      description: "[Documentation](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-processor)"
+      type: object
+      properties:
+        DeviceID:
+          type:
+            - string
+            - "null"
+          description: Unique identifier of the processor on the system.
+        Name:
+          type:
+            - string
+            - "null"
+          description: "Processor name. Typically includes manufacturer, brand, and\
+            \ model information."
+        NumberOfCores:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: Number of physical cores on the processor.
+        NumberOfEnabledCore:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: Number of enabled processor cores.
+        ThreadCount:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: Number of hardware threads across all cores.
+        NumberOfLogicalProcessors:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: Number of logical processors on the system.
+        Manufacturer:
+          type:
+            - string
+            - "null"
+          description: Name of the processor manufacturer.
+        AddressWidth:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Width of the processor address bus in bits.
+
+            For a 32-bit CPU the value is 32 and for a 64-bit CPU,
+            the value is 64.
+        L2CacheSize:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: Size of the Level 2 cache in kilobytes.
+        L3CacheSize:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: Size of the Level 3 cache in kilobytes.
+        MaxClockSpeed:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Maximum speed of the processor in megahertz
+            under normal operating conditions.
+        ExtClock:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: External clock frequency of the processor in megahertz.
+        SocketDesignation:
+          type:
+            - string
+            - "null"
+          description: Type of socket or slot used by the processor.
+        Version:
+          type:
+            - string
+            - "null"
+          description: Version of the processor as reported by the manufacturer.
+        Caption:
+          type:
+            - string
+            - "null"
+          description: Short textual description of the processor.
+        Family:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Processor family type.
+
+            Indicates the manufacturer and generation of the processor.
+        Stepping:
+          type:
+            - string
+            - "null"
+          description: Stepping information for the processor revision.
+        VirtualizationFirmwareEnabled:
+          type:
+            - boolean
+            - "null"
+          description: Indicates whether virtualization technology is enabled in firmware.
+        ProcessorId:
+          type:
+            - string
+            - "null"
+          description: |
+            Processor identifier string, which may include family,
+            model, and stepping information.
+        Architecture:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Processor architecture used by the platform.
+
+            Possible values:
+            - x86 (0)
+            - MIPS (1)
+            - Alpha (2)
+            - PowerPC (3)
+            - ARM (5)
+            - ia64 (6)
+            - x64 (9)
+            - ARM64 (12)
+    Win32_SoundDevice:
+      description: "[Documentation](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-sounddevice)"
+      type: object
+      properties:
+        DeviceID:
+          type:
+            - string
+            - "null"
+          description: Unique identifier of the sound device.
+        PNPDeviceID:
+          type:
+            - string
+            - "null"
+          description: Windows Plug and Play device identifier.
+        Name:
+          type:
+            - string
+            - "null"
+          description: Friendly name of the sound device as recognized by the system.
+        Manufacturer:
+          type:
+            - string
+            - "null"
+          description: Manufacturer of the sound device.
+        Status:
+          type:
+            - string
+            - "null"
+          description: |
+            Current operational status of the sound device.
+
+            Possible OPERATIONAL values:
+            - OK
+            - Degraded
+            - Pred Fail
+
+            Possible NON-OPERATIONAL values:
+            - Unknown
+            - Error
+            - Starting
+            - Stopping
+            - Service
+
+            Possible OTHER values:
+            - Stressed
+            - NonRecover
+            - No Contact
+            - Lost Comm
+        StatusInfo:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Numeric state of the logical device.
+
+            Possible values:
+            - 1 - Other
+            - 2 - Unknown
+            - 3 - Enabled
+            - 4 - Disabled
+            - 5 - Not Applicable
+    Win32_UserAccount:
+      description: "[Documentation](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-useraccount)"
+      type: object
+      properties:
+        SID:
+          type:
+            - string
+            - "null"
+          description: |
+            Security identifier (SID) for this account.
+
+            A SID is a string value of variable length that is used to identify a trustee.
+            Each account has a unique SID that an authority, such as a Windows domain, issues.
+            The SID is stored in the security database.
+            When a user logs on, the system retrieves the user SID from the database,
+            places the SID in the user access token,
+            and then uses the SID in the user access token to identify the user
+            in all subsequent interactions with Windows security.
+            Each SID is a unique identifier for a user or group, and a different user or group cannot have the same SID.
+        SIDType:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Type of SID.
+
+            Possible values:
+            - 1 — User
+            - 2 — Group
+            - 3 — Domain
+            - 4 — Alias
+            - 5 — WellKnownGroup
+            - 6 — DeletedAccount
+            - 7 — Invalid
+            - 8 — Unknown
+            - 9 — Computer
+        AccountType:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: |
+            Type of user account.
+
+            Possible values:
+            - 256 — Temporary duplicate account
+            - 512 — Normal account
+            - 2048 — Interdomain trust account
+            - 4096 — Workstation trust account
+            - 8192 — Server trust account
+        Caption:
+          type:
+            - string
+            - "null"
+          description: Caption of the user account in the format domain/username.
+        Description:
+          type:
+            - string
+            - "null"
+          description: Description of the user account.
+        Domain:
+          type:
+            - string
+            - "null"
+          description: Domain to which the user account belongs.
+        Name:
+          type:
+            - string
+            - "null"
+          description: Name of the user account.
+        Disabled:
+          type:
+            - boolean
+            - "null"
+          description: Indicates whether the account is disabled.
+        LocalAccount:
+          type:
+            - boolean
+            - "null"
+          description: Indicates whether this is a local account.
+        Lockout:
+          type:
+            - boolean
+            - "null"
+          description: Indicates whether the account is locked out.
+        PasswordRequired:
+          type:
+            - boolean
+            - "null"
+          description: Indicates whether a password is required for the account.
+        PasswordExpires:
+          type:
+            - boolean
+            - "null"
+          description: Indicates whether the password expires.
+        PasswordChangeable:
+          type:
+            - boolean
+            - "null"
+          description: Indicates whether the password can be changed.
+        Status:
+          type:
+            - string
+            - "null"
+          description: |
+            Current operational status of the account.
+
+            Possible OPERATIONAL values:
+            - "OK"
+            - "Degraded"
+            - "Pred Fail"
+
+            Possible NON-OPERATIONAL values:
+            - "Unknown"
+            - "Error"
+            - "Starting"
+            - "Stopping"
+            - "Service"
+
+            Possible OTHER values:
+            - "Stressed"
+            - "NonRecover"
+            - "No Contact"
+            - "Lost Comm"
+    Win32_VideoController:
+      description: "[Documentation](https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-videocontroller)"
+      type: object
+      properties:
+        DeviceID:
+          type:
+            - string
+            - "null"
+          description: Identifier (unique to the computer system) for this video controller.
+        Name:
+          type:
+            - string
+            - "null"
+          description: Label by which the video controller is known.
+        PNPDeviceID:
+          type:
+            - string
+            - "null"
+          description: Windows Plug and Play device identifier of the video controller.
+        CurrentBitsPerPixel:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: Number of bits used to display each pixel.
+        CurrentHorizontalResolution:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: Current number of horizontal pixels.
+        CurrentVerticalResolution:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: Current number of vertical pixels.
+        CurrentRefreshRate:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: |
+            Frequency at which the video controller refreshes the image for the monitor.
+
+            Unit: hertz (Hz).
+        MaxRefreshRate:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: Maximum refresh rate of the video controller in hertz.
+        MinRefreshRate:
+          type:
+            - integer
+            - "null"
+          format: int32
+          description: Minimum refresh rate of the video controller in hertz.
+        AdapterDACType:
+          type:
+            - string
+            - "null"
+          description: |
+            Name or identifier of the digital-to-analog converter (DAC) chip.
+
+            The character set of this property is alphanumeric.
+        AdapterRAM:
+          type:
+            - integer
+            - "null"
+          format: int64
+          description: Memory size of the video adapter in bytes.
+        DriverDate:
+          type:
+            - string
+            - "null"
+          description: Last modification date and time of the currently installed
+            video driver.
+        DriverVersion:
+          type:
+            - string
+            - "null"
+          description: Version number of the video driver.
+        VideoProcessor:
+          type:
+            - string
+            - "null"
+          description: Free-form string describing the video processor.
+tags:
+  - name: Display
+  - name: Mainboard
+  - name: Memory
+  - name: Network
+  - name: Peripheral
+  - name: Processor
+  - name: Storage
+  - name: System
+  - name: User
+paths:
+  /api/v1/disk:
+    get:
+      summary: List of Win32_DiskDrive objects
+      tags:
+        - Storage
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Win32_DiskDrive"
+        "500":
+          description: Failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /api/v1/disk/logicaldisk:
+    get:
+      summary: List of Win32_LogicalDisk objects
+      tags:
+        - Storage
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Win32_LogicalDisk"
+        "500":
+          description: Failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /api/v1/disk/partition:
+    get:
+      summary: List of Win32_DiskPartition objects
+      tags:
+        - Storage
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Win32_DiskPartition"
+        "500":
+          description: Failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /api/v1/display/monitor:
+    get:
+      summary: List of Win32_DesktopMonitor objects
+      tags:
+        - Display
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Win32_DesktopMonitor"
+        "500":
+          description: Failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /api/v1/display/videocontroller:
+    get:
+      summary: List of Win32_VideoController objects
+      tags:
+        - Display
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Win32_VideoController"
+        "500":
+          description: Failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /api/v1/mainboard:
+    get:
+      summary: List of Win32_Baseboard objects
+      tags:
+        - Mainboard
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Win32_Baseboard"
+        "500":
+          description: Failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /api/v1/mainboard/bios:
+    get:
+      summary: List of Win32_BIOS objects
+      tags:
+        - Mainboard
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Win32_BIOS"
+        "500":
+          description: Failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /api/v1/mainboard/port:
+    get:
+      summary: List of Win32_PortConnector objects
+      tags:
+        - Mainboard
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Win32_PortConnector"
+        "500":
+          description: Failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /api/v1/memory/physical:
+    get:
+      summary: List of Win32_PhysicalMemory objects
+      tags:
+        - Memory
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Win32_PhysicalMemory"
+        "500":
+          description: Failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /api/v1/network/adapter:
+    get:
+      summary: List of MSFT_NetAdapter objects
+      tags:
+        - Network
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/MSFT_NetAdapter"
+        "500":
+          description: Failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /api/v1/network/dns:
+    get:
+      summary: List of MSFT_DNSClientServerAddress objects
+      tags:
+        - Network
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/MSFT_DNSClientServerAddress"
+        "500":
+          description: Failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /api/v1/network/ip:
+    get:
+      summary: List of MSFT_NetIPAddress objects
+      tags:
+        - Network
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/MSFT_NetIPAddress"
+        "500":
+          description: Failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /api/v1/network/profile:
+    get:
+      summary: List of MSFT_NetConnectionProfile objects
+      tags:
+        - Network
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/MSFT_NetConnectionProfile"
+        "500":
+          description: Failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /api/v1/peripheral/battery:
+    get:
+      summary: List of Win32_Battery objects
+      tags:
+        - Peripheral
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Win32_Battery"
+        "500":
+          description: Failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /api/v1/peripheral/printer:
+    get:
+      summary: List of Win32_Printer objects
+      tags:
+        - Peripheral
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Win32_Printer"
+        "500":
+          description: Failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /api/v1/peripheral/sound:
+    get:
+      summary: List of Win32_SoundDevice objects
+      tags:
+        - Peripheral
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Win32_SoundDevice"
+        "500":
+          description: Failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /api/v1/processor:
+    get:
+      summary: List of Win32_Processor objects
+      tags:
+        - Processor
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Win32_Processor"
+        "500":
+          description: Failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /api/v1/processor/cache:
+    get:
+      summary: List of Win32_CacheMemory objects
+      tags:
+        - Processor
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Win32_CacheMemory"
+        "500":
+          description: Failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /api/v1/system/computer:
+    get:
+      summary: Win32_ComputerSystem Object
+      tags:
+        - System
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Win32_ComputerSystem"
+        "500":
+          description: Failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /api/v1/system/env:
+    get:
+      summary: List of Win32_Environment objects
+      tags:
+        - System
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Win32_Environment"
+        "500":
+          description: Failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /api/v1/system/os:
+    get:
+      summary: List of Win32_OperatingSystem objects
+      tags:
+        - System
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Win32_OperatingSystem"
+        "500":
+          description: Failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /api/v1/system/pnp:
+    get:
+      summary: List of Win32_PnPEntity objects
+      tags:
+        - System
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Win32_PnPEntity"
+        "500":
+          description: Failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /api/v1/system/process:
+    get:
+      summary: List of Win32_Process objects
+      tags:
+        - System
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Win32_Process"
+        "500":
+          description: Failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /api/v1/user/account:
+    get:
+      summary: List of Win32_UserAccount objects
+      tags:
+        - User
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Win32_UserAccount"
+        "500":
+          description: Failure
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+info:
+  title: Cimari REST
+  version: 0.0.3
+  description: Transform cimari codebase into a REST Service
+  contact:
+    name: Egg-03
+    email: eggzerothree@proton.me
+  license:
+    name: MIT
+    url: https://mit-license.org/
